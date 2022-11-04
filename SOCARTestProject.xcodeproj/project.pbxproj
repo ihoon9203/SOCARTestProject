@@ -14,6 +14,8 @@
 		7AB6DD5C2914EDBF0013062C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AB6DD5B2914EDBF0013062C /* Assets.xcassets */; };
 		7AB6DD5F2914EDBF0013062C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB6DD5D2914EDBF0013062C /* LaunchScreen.storyboard */; };
 		7AB6DD67291579920013062C /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD66291579920013062C /* CoreLocationManager.swift */; };
+		7AB6DD6929157E1D0013062C /* FavoriteZonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD6829157E1D0013062C /* FavoriteZonesViewController.swift */; };
+		7AB6DD6B29157E330013062C /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD6A29157E330013062C /* CarListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		7AB6DD5E2914EDBF0013062C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AB6DD602914EDBF0013062C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AB6DD66291579920013062C /* CoreLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
+		7AB6DD6829157E1D0013062C /* FavoriteZonesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteZonesViewController.swift; sourceTree = "<group>"; };
+		7AB6DD6A29157E330013062C /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 				7AB6DD522914EDBE0013062C /* AppDelegate.swift */,
 				7AB6DD542914EDBE0013062C /* SceneDelegate.swift */,
 				7AB6DD562914EDBE0013062C /* MapViewController.swift */,
+				7AB6DD6829157E1D0013062C /* FavoriteZonesViewController.swift */,
+				7AB6DD6A29157E330013062C /* CarListViewController.swift */,
 				7AB6DD582914EDBE0013062C /* Main.storyboard */,
 				7AB6DD5B2914EDBF0013062C /* Assets.xcassets */,
 				7AB6DD5D2914EDBF0013062C /* LaunchScreen.storyboard */,
@@ -142,6 +148,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AB6DD572914EDBE0013062C /* MapViewController.swift in Sources */,
+				7AB6DD6B29157E330013062C /* CarListViewController.swift in Sources */,
+				7AB6DD6929157E1D0013062C /* FavoriteZonesViewController.swift in Sources */,
 				7AB6DD67291579920013062C /* CoreLocationManager.swift in Sources */,
 				7AB6DD532914EDBE0013062C /* AppDelegate.swift in Sources */,
 				7AB6DD552914EDBE0013062C /* SceneDelegate.swift in Sources */,
