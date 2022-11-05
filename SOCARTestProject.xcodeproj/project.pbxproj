@@ -16,6 +16,7 @@
 		7AB6DD67291579920013062C /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD66291579920013062C /* CoreLocationManager.swift */; };
 		7AB6DD6929157E1D0013062C /* FavoriteZonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD6829157E1D0013062C /* FavoriteZonesViewController.swift */; };
 		7AB6DD6B29157E330013062C /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD6A29157E330013062C /* CarListViewController.swift */; };
+		7AB6DD6D2915DC720013062C /* AvailableCarTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB6DD6C2915DC720013062C /* AvailableCarTVCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7AB6DD66291579920013062C /* CoreLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
 		7AB6DD6829157E1D0013062C /* FavoriteZonesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteZonesViewController.swift; sourceTree = "<group>"; };
 		7AB6DD6A29157E330013062C /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
+		7AB6DD6C2915DC720013062C /* AvailableCarTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableCarTVCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				7AB6DD5D2914EDBF0013062C /* LaunchScreen.storyboard */,
 				7AB6DD602914EDBF0013062C /* Info.plist */,
 				7AB6DD66291579920013062C /* CoreLocationManager.swift */,
+				7AB6DD6C2915DC720013062C /* AvailableCarTVCell.xib */,
 			);
 			path = SOCARTestProject;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AB6DD6D2915DC720013062C /* AvailableCarTVCell.xib in Resources */,
 				7AB6DD5F2914EDBF0013062C /* LaunchScreen.storyboard in Resources */,
 				7AB6DD5C2914EDBF0013062C /* Assets.xcassets in Resources */,
 				7AB6DD5A2914EDBE0013062C /* Main.storyboard in Resources */,

@@ -30,6 +30,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="I7u-WC-eQK" kind="show" id="wxF-iC-lQ0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -53,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="973.28244274809151" y="-2.1126760563380285"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorite Zones View Controller-->
         <scene sceneID="zk8-Ls-OQx">
             <objects>
-                <viewController id="I7u-WC-eQK" sceneMemberID="viewController">
+                <viewController id="I7u-WC-eQK" customClass="FavoriteZonesViewController" customModule="SOCARTestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9sM-AC-ICd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,15 +113,16 @@
                         <viewLayoutGuide key="safeArea" id="1rG-09-aCg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="pJM-ul-hXJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZN3-yo-7yE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2023.6641221374045" y="326.76056338028172"/>
         </scene>
-        <!--View Controller-->
+        <!--Car List View Controller-->
         <scene sceneID="S3e-EK-fcg">
             <objects>
-                <viewController id="JYi-ID-A20" sceneMemberID="viewController">
+                <viewController id="JYi-ID-A20" customClass="CarListViewController" customModule="SOCARTestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8r9-be-mh0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
