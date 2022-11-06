@@ -8,10 +8,9 @@
 import UIKit
 
 class CarListViewController: UIViewController {
-
+	var availableCars: [Car] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     

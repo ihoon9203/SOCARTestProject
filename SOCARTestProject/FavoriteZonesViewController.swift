@@ -9,12 +9,14 @@ import UIKit
 
 class FavoriteZonesViewController: UIViewController {
 
-    override func viewDidLoad() {
+	@IBAction func popToPrevious(_ sender: Any) {
+		self.navigationController?.popViewController(animated: true)
+	}
+	@IBOutlet weak var leftBarButton: UIBarButtonItem!
+	override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-    
 
     /*
     // MARK: - Navigation

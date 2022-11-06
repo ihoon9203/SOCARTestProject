@@ -76,8 +76,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SsV-B0-HKm">
-                                                    <rect key="frame" x="16" y="11" width="60" height="60"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_zone" translatesAutoresizingMaskIntoConstraints="NO" id="SsV-B0-HKm">
+                                                    <rect key="frame" x="16" y="10" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="dk0-xa-c2d"/>
                                                     </constraints>
@@ -97,11 +97,13 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="SsV-B0-HKm" firstAttribute="leading" secondItem="whZ-zc-us5" secondAttribute="leading" constant="16" id="0MD-6l-yvu"/>
+                                                <constraint firstAttribute="bottom" secondItem="SsV-B0-HKm" secondAttribute="bottom" constant="10" id="1Hf-Ti-PiK"/>
                                                 <constraint firstItem="23Q-eY-6va" firstAttribute="leading" secondItem="SsV-B0-HKm" secondAttribute="trailing" constant="16" id="68O-oy-e4h"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="23Q-eY-6va" secondAttribute="trailing" constant="22" id="CWf-Nm-Uk1"/>
                                                 <constraint firstItem="MWA-Tc-gJZ" firstAttribute="leading" secondItem="SsV-B0-HKm" secondAttribute="trailing" constant="16" id="XPl-sT-QR2"/>
                                                 <constraint firstItem="SsV-B0-HKm" firstAttribute="centerY" secondItem="whZ-zc-us5" secondAttribute="centerY" id="Zfv-4W-ec0"/>
                                                 <constraint firstItem="MWA-Tc-gJZ" firstAttribute="top" secondItem="23Q-eY-6va" secondAttribute="bottom" constant="5" id="e60-Ab-Of3"/>
+                                                <constraint firstItem="SsV-B0-HKm" firstAttribute="top" secondItem="whZ-zc-us5" secondAttribute="top" constant="10" id="gBZ-x0-iK4"/>
                                                 <constraint firstItem="23Q-eY-6va" firstAttribute="top" secondItem="whZ-zc-us5" secondAttribute="topMargin" id="jvc-XM-Iwi"/>
                                                 <constraint firstAttribute="trailing" secondItem="MWA-Tc-gJZ" secondAttribute="trailing" constant="22" id="ucM-wc-1nA"/>
                                             </constraints>
@@ -113,7 +115,17 @@
                         <viewLayoutGuide key="safeArea" id="1rG-09-aCg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pJM-ul-hXJ"/>
+                    <navigationItem key="navigationItem" id="pJM-ul-hXJ">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="ic24_back" id="s2m-5T-BFf">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="popToPrevious:" destination="I7u-WC-eQK" id="FT8-EL-PQz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="leftBarButton" destination="s2m-5T-BFf" id="y1J-Wo-Dhe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZN3-yo-7yE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -207,6 +219,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic24_back" width="24" height="24"/>
+        <image name="img_zone" width="36" height="47"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
