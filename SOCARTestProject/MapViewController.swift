@@ -48,16 +48,18 @@ class MapViewController: UIViewController {
 }
 extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
 	func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-		var identifier: String
 		switch annotation.title {
 		case "socar_zone":
-			var view = mapView.dequeueReusableAnnotationView(withIdentifier: "socar")
+			let view = mapView.dequeueReusableAnnotationView(withIdentifier: "socar")
 			view?.image = UIImage(named: "img_zone_shadow")
 			view?.annotation = annotation
 			return view
 		default:
-			var view = mapView.dequeueReusableAnnotationView(withIdentifier: "")
+			let view = mapView.dequeueReusableAnnotationView(withIdentifier: "")
 			return view
 		}
+	}
+	func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
+		print(annotation.coordinate)
 	}
 }
