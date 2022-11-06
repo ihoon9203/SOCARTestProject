@@ -4,13 +4,15 @@
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="image_name" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="designatedZone" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ZoneEntity" inverseName="availableCars" inverseEntity="ZoneEntity"/>
     </entity>
     <entity name="ZoneEntity" representedClassName="ZoneEntity" syncable="YES">
         <attribute name="alias" optional="YES" attributeType="String"/>
+        <attribute name="favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="availableCars" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CarEntity" inverseName="designatedZone" inverseEntity="CarEntity"/>
+        <relationship name="availableCars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CarEntity" inverseName="designatedZone" inverseEntity="CarEntity"/>
     </entity>
 </model>

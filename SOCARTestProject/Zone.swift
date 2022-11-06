@@ -13,8 +13,22 @@ struct Zone {
 	var latitude: Double
 	
 	var favorite: Bool
-	var name: String
-	var alias: String
+	var title: String?
+	var alias: String?
+	init(_ entity: ZoneEntity) {
+		self.title = entity.title
+		self.alias = entity.alias
+		self.favorite = entity.favorite
+		self.latitude = entity.latitude
+		self.longitude = entity.longitude
+	}
+	init(longitude: Double, latitude: Double, favorite: Bool, title: String, alias: String) {
+		self.title = title
+		self.alias = alias
+		self.favorite = favorite
+		self.latitude = latitude
+		self.longitude = longitude
+	}
 }
 
 class ZoneAnnotationView: MKAnnotationView {

@@ -20,7 +20,25 @@ extension ZoneEntity {
     @NSManaged public var latitude: Double
     @NSManaged public var title: String?
     @NSManaged public var alias: String?
-    @NSManaged public var availableCars: CarEntity?
+    @NSManaged public var favorite: Bool
+    @NSManaged public var availableCars: NSSet?
+
+}
+
+// MARK: Generated accessors for availableCars
+extension ZoneEntity {
+
+    @objc(addAvailableCarsObject:)
+    @NSManaged public func addToAvailableCars(_ value: CarEntity)
+
+    @objc(removeAvailableCarsObject:)
+    @NSManaged public func removeFromAvailableCars(_ value: CarEntity)
+
+    @objc(addAvailableCars:)
+    @NSManaged public func addToAvailableCars(_ values: NSSet)
+
+    @objc(removeAvailableCars:)
+    @NSManaged public func removeFromAvailableCars(_ values: NSSet)
 
 }
 

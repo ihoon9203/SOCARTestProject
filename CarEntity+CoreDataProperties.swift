@@ -19,6 +19,7 @@ extension CarEntity {
     @NSManaged public var name: String?
     @NSManaged public var desc: String?
     @NSManaged public var image_name: String?
+    @NSManaged public var type: String?
     @NSManaged public var designatedZone: ZoneEntity?
 
 }

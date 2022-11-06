@@ -14,10 +14,7 @@ class MapViewController: UIViewController {
 	@IBOutlet weak var favoriteZoneButton: UIButton!
 	@IBOutlet weak var map: MKMapView!
 	
-	var socarZones: [Zone] = [
-		Zone(longitude: -111.872654, latitude: 40.766170, favorite: true, name: "place 1", alias: "good place"),
-		Zone(longitude: -111.864161, latitude: 40.757946, favorite: true, name: "place 1", alias: "good place")
-	]
+	var registeredZones: [Zone] = []
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -28,9 +25,25 @@ class MapViewController: UIViewController {
 		CoreLocationManager.sharedLocationManager.distanceFilter = 100
 		map.userTrackingMode = .follow
 		
-		// initializing zones
+		// initializing dummy data (comment if not needed)
+		let socarZones: [Zone] = [
+			Zone(longitude: -111.872654, latitude: 40.766170, favorite: true, title: "place 1", alias: "good place"),
+			Zone(longitude: -111.864161, latitude: 40.757946, favorite: false, title: "place 1", alias: "good place")
+		]
+		let socarCars: [Car] = [
+			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .electric),
+			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .electric),
+			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .electric),
+			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV),
+			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV),
+			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV),
+			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV)
+		]
+		CoreDataManager.sharedManager.enlistZones(zoneList: socarZones)
 		
-		socarZones.map {
+		// initializing annotations
+		registeredZones = CoreDataManager.sharedManager.getAllZones()
+		registeredZones.map {
 			let location = CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)
 			let socarAnnotation = MKPointAnnotation()
 			socarAnnotation.coordinate = location
