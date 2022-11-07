@@ -21,19 +21,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWN-tr-M0x">
-                                <rect key="frame" x="18" y="104" width="102" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="즐겨찾는 존">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="I7u-WC-eQK" kind="show" id="wxF-iC-lQ0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -42,13 +29,10 @@
                             <constraint firstItem="C3G-yL-epa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-103" id="CgA-gN-dsB"/>
                             <constraint firstItem="C3G-yL-epa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fzu-6s-Llg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C3G-yL-epa" secondAttribute="trailing" id="K02-kU-8JG"/>
-                            <constraint firstItem="MWN-tr-M0x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="1" id="TAI-38-mpK"/>
-                            <constraint firstItem="MWN-tr-M0x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="jcU-hl-Mx3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="byo-im-4WO"/>
                     <connections>
-                        <outlet property="favoriteZoneButton" destination="MWN-tr-M0x" id="hd9-uX-g46"/>
                         <outlet property="map" destination="C3G-yL-epa" id="wNJ-6a-Epk"/>
                     </connections>
                 </viewController>
@@ -59,7 +43,7 @@
         <!--Favorite Zones View Controller-->
         <scene sceneID="zk8-Ls-OQx">
             <objects>
-                <viewController id="I7u-WC-eQK" customClass="FavoriteZonesViewController" customModule="SOCARTestProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoriteZoneVC" id="I7u-WC-eQK" customClass="FavoriteZonesViewController" customModule="SOCARTestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9sM-AC-ICd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -220,7 +204,6 @@
                             <constraint firstItem="9RJ-Yf-6Ps" firstAttribute="leading" secondItem="JsW-Ms-WXf" secondAttribute="leading" id="zZW-p6-m9I"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tFt-Ia-Cul"/>
                     <connections>
                         <outlet property="favoriteImage" destination="8Ai-uF-9I4" id="GBs-Em-8g8"/>
                         <outlet property="location" destination="KbC-c9-WZf" id="4tj-3b-ZdD"/>
@@ -260,9 +243,6 @@
         <image name="img_zone" width="36" height="47"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
