@@ -29,6 +29,18 @@ class CarListTableViewCell: UITableViewCell {
 			nibView.carImage.image = UIImage(named: imageName ?? "")
 			nibView.carTitle.text = title
 			nibView.carDescription.text = carDescription
+			DispatchQueue.global().async {
+				if let imageName = self.imageName {
+					if let imageURL = URL(string: imageName) {
+						if let data = try? Data(contentsOf: imageURL) {
+							DispatchQueue.main.async {
+								nibView.carImage.image = UIImage(data: data)
+							}
+						}
+					}
+				}
+			}
+			
 			addSubview(nibView)
 		}
 	}
