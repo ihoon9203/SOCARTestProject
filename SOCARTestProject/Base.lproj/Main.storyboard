@@ -132,6 +132,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="favoritesTable" destination="3jk-LX-ynu" id="7GN-SN-3SO"/>
                         <outlet property="leftBarButton" destination="s2m-5T-BFf" id="y1J-Wo-Dhe"/>
                     </connections>
                 </viewController>
@@ -162,11 +163,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Ai-uF-9I4">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Ai-uF-9I4">
                                         <rect key="frame" x="329" y="15" width="40" height="40"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="wT3-d9-gh8"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="ck6-FT-aVO" appends="YES" id="eyC-70-hwr"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -217,12 +222,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="tFt-Ia-Cul"/>
                     <connections>
-                        <outlet property="favoriteImage" destination="8Ai-uF-9I4" id="TuI-PQ-av8"/>
+                        <outlet property="favoriteImage" destination="8Ai-uF-9I4" id="GBs-Em-8g8"/>
                         <outlet property="location" destination="KbC-c9-WZf" id="4tj-3b-ZdD"/>
                         <outlet property="locationAlias" destination="dfm-Fz-lB8" id="Ew8-TY-PJS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mx-4i-LoO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ck6-FT-aVO">
+                    <connections>
+                        <action selector="didToggleFavorite:" destination="JYi-ID-A20" id="JiS-BL-tOt"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2028.2442748091603" y="-337.32394366197184"/>
         </scene>

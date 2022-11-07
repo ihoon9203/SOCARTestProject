@@ -9,15 +9,20 @@ import UIKit
 
 class FavoriteZonesViewController: UIViewController {
 
+	@IBOutlet weak var favoritesTable: UITableView!
+	@IBOutlet weak var leftBarButton: UIBarButtonItem!
 	@IBAction func popToPrevious(_ sender: Any) {
 		self.navigationController?.popViewController(animated: true)
 	}
-	@IBOutlet weak var leftBarButton: UIBarButtonItem!
 	var favoriteZones: [Zone] = []
 	override func viewDidLoad() {
         super.viewDidLoad()
-		favoriteZones = CoreDataManager.sharedManager.getFavoriteZones()
     }
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		favoriteZones = CoreDataManager.sharedManager.getFavoriteZones()
+		favoritesTable.reloadData()
+	}
 
 }
 extension FavoriteZonesViewController: UITableViewDelegate, UITableViewDataSource {

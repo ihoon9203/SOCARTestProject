@@ -77,6 +77,24 @@ class CoreDataManager {
 		}
 		return zones
 	}
+	func toggleFavoriteZones(zone: String) {
+		let fetchZonesRequest = NSFetchRequest<ZoneEntity>(entityName: "ZoneEntity")
+		fetchZonesRequest.predicate = NSPredicate(format: "id = %@", zone)
+		do {
+			if let zoneEntity = try managedContext.fetch(fetchZonesRequest).first {
+				if zoneEntity.favorite {
+					zoneEntity.favorite = false
+				} else {
+					zoneEntity.favorite = true
+				}
+			}
+		} catch {
+			print(error)
+		}
+		DispatchQueue.main.async {
+			self.appDelegate.saveContext()
+		}
+	}
 	func enlistCarsForZone(carList: [Car], zone: String) {
 		var designatedZone: ZoneEntity?
 		guard let zoneEntity = NSEntityDescription.entity(forEntityName: "ZoneEntity", in: managedContext) else { return }

@@ -18,15 +18,32 @@ class CarListViewController: UIViewController {
 	var availableMID_SEDANCars: 		[Car] = []
 	var uncategorizedCars:				[Car] = []
 	var zoneID: String!
+	var isFavorite: Bool = false
 	@IBOutlet weak var location: UILabel!
 	@IBOutlet weak var locationAlias: UILabel!
 	@IBOutlet weak var favoriteImage: UIImageView!
+
+	@IBAction func didToggleFavorite(_ sender: Any) {
+		CoreDataManager.sharedManager.toggleFavoriteZones(zone: zoneID)
+		if isFavorite {
+			isFavorite = false
+			favoriteImage.image = UIImage(named: "_ic24_favorite_gray")
+		} else {
+			isFavorite = true
+			favoriteImage.image = UIImage(named: "_ic24_favorite_blue")
+		}
+	}
 	override func viewDidLoad() {
         super.viewDidLoad()
 		let currentZone = CoreDataManager.sharedManager.getDesignatedZone(id: zoneID)
 		location.text = currentZone?.name
 		locationAlias.text = currentZone?.alias
-		favoriteImage.image = currentZone?.favorite ?? false ? UIImage(named: "_ic24_favorite_blue") : UIImage(named: "_ic24_favorite_gray")
+		if let favorite = currentZone?.favorite {
+			if favorite {
+				isFavorite = true
+			}
+		}
+		favoriteImage.image = isFavorite ? UIImage(named: "_ic24_favorite_blue") : UIImage(named: "_ic24_favorite_gray")
 		availableCars = CoreDataManager.sharedManager.getAllCarsForZone(id: zoneID)
 		for car in availableCars {
 			switch car.category {
@@ -48,7 +65,9 @@ class CarListViewController: UIViewController {
 				uncategorizedCars.append(car)
 			}
 		}
-    }
+		favoriteImage.isUserInteractionEnabled = true
+	}
+	
 
 }
 extension CarListViewController: UITableViewDelegate, UITableViewDataSource {
