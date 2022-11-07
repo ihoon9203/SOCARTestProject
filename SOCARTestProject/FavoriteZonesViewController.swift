@@ -13,19 +13,26 @@ class FavoriteZonesViewController: UIViewController {
 		self.navigationController?.popViewController(animated: true)
 	}
 	@IBOutlet weak var leftBarButton: UIBarButtonItem!
+	var favoriteZones: [Zone] = []
 	override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+		favoriteZones = CoreDataManager.sharedManager.getFavoriteZones()
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+}
+extension FavoriteZonesViewController: UITableViewDelegate, UITableViewDataSource {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return favoriteZones.count
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteZone") as! FavoriteZoneTableViewCell
+		cell.titleLabel.text = favoriteZones[indexPath.row].title
+		cell.aliasLabel.text = favoriteZones[indexPath.row].alias
+		cell.longitude = favoriteZones[indexPath.row].longitude
+		cell.latitude = favoriteZones[indexPath.row].latitude
+		return cell
+	}
+	
+	
 }
