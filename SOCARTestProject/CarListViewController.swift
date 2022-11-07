@@ -38,14 +38,19 @@ extension CarListViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return availableCars.count
 	}
-	
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return CGFloat(129)
+	}
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "CarListTableViewCell") as! CarListTableViewCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: "AvailableCar") as! CarListTableViewCell
 		cell.title = availableCars[indexPath.row].name
-		cell.carDescription = availableCars[indexPath.row].description
+		cell.carDescription = availableCars[indexPath.row].carDescription
 		cell.imageName = availableCars[indexPath.row].imageName
+		cell.awakeFromNib()
 		return cell
 	}
-	
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return CGFloat(56)
+	}
 	
 }

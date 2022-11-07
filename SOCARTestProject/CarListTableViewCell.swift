@@ -12,8 +12,8 @@ class CarListTableViewCell: UITableViewCell {
 	var carDescription: String?
 	var imageName: String?
     override func awakeFromNib() {
-        super.awakeFromNib()
 		loadViewFromNib()
+        super.awakeFromNib()
         // Initialization code
     }
 
