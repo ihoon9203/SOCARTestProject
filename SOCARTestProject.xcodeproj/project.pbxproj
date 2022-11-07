@@ -19,12 +19,12 @@
 		7A60935B2918B90C00CF9122 /* CarListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60935A2918B90C00CF9122 /* CarListHeaderView.swift */; };
 		7A60935D2918C2EA00CF9122 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60935C2918C2EA00CF9122 /* Constants.swift */; };
 		7A60935F2918C41600CF9122 /* ZonesDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60935E2918C41600CF9122 /* ZonesDataParser.swift */; };
-		7A6093642918C4EE00CF9122 /* CarEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6093602918C4EE00CF9122 /* CarEntity+CoreDataClass.swift */; };
-		7A6093652918C4EE00CF9122 /* CarEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6093612918C4EE00CF9122 /* CarEntity+CoreDataProperties.swift */; };
-		7A6093662918C4EE00CF9122 /* ZoneEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6093622918C4EE00CF9122 /* ZoneEntity+CoreDataClass.swift */; };
-		7A6093672918C4EE00CF9122 /* ZoneEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6093632918C4EE00CF9122 /* ZoneEntity+CoreDataProperties.swift */; };
 		7A6093692918C55700CF9122 /* CarsDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6093682918C55700CF9122 /* CarsDataParser.swift */; };
 		7A60936B2918C5E700CF9122 /* CommunicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60936A2918C5E700CF9122 /* CommunicationProtocol.swift */; };
+		7A6093702918D54100CF9122 /* ZoneEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60936C2918D54100CF9122 /* ZoneEntity+CoreDataClass.swift */; };
+		7A6093712918D54100CF9122 /* ZoneEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60936D2918D54100CF9122 /* ZoneEntity+CoreDataProperties.swift */; };
+		7A6093722918D54100CF9122 /* CarEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60936E2918D54100CF9122 /* CarEntity+CoreDataClass.swift */; };
+		7A6093732918D54100CF9122 /* CarEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60936F2918D54100CF9122 /* CarEntity+CoreDataProperties.swift */; };
 		7AB6DD532914EDBE0013062C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD522914EDBE0013062C /* AppDelegate.swift */; };
 		7AB6DD552914EDBE0013062C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD542914EDBE0013062C /* SceneDelegate.swift */; };
 		7AB6DD572914EDBE0013062C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD562914EDBE0013062C /* MapViewController.swift */; };
@@ -50,12 +50,12 @@
 		7A60935A2918B90C00CF9122 /* CarListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListHeaderView.swift; sourceTree = "<group>"; };
 		7A60935C2918C2EA00CF9122 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7A60935E2918C41600CF9122 /* ZonesDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZonesDataParser.swift; sourceTree = "<group>"; };
-		7A6093602918C4EE00CF9122 /* CarEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7A6093612918C4EE00CF9122 /* CarEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7A6093622918C4EE00CF9122 /* ZoneEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZoneEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7A6093632918C4EE00CF9122 /* ZoneEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZoneEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7A6093682918C55700CF9122 /* CarsDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsDataParser.swift; sourceTree = "<group>"; };
 		7A60936A2918C5E700CF9122 /* CommunicationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationProtocol.swift; sourceTree = "<group>"; };
+		7A60936C2918D54100CF9122 /* ZoneEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZoneEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A60936D2918D54100CF9122 /* ZoneEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZoneEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A60936E2918D54100CF9122 /* CarEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A60936F2918D54100CF9122 /* CarEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7AB6DD4F2914EDBE0013062C /* SOCARTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOCARTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB6DD522914EDBE0013062C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AB6DD542914EDBE0013062C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,10 +84,10 @@
 		7AB6DD462914EDBE0013062C = {
 			isa = PBXGroup;
 			children = (
-				7A6093602918C4EE00CF9122 /* CarEntity+CoreDataClass.swift */,
-				7A6093612918C4EE00CF9122 /* CarEntity+CoreDataProperties.swift */,
-				7A6093622918C4EE00CF9122 /* ZoneEntity+CoreDataClass.swift */,
-				7A6093632918C4EE00CF9122 /* ZoneEntity+CoreDataProperties.swift */,
+				7A60936C2918D54100CF9122 /* ZoneEntity+CoreDataClass.swift */,
+				7A60936D2918D54100CF9122 /* ZoneEntity+CoreDataProperties.swift */,
+				7A60936E2918D54100CF9122 /* CarEntity+CoreDataClass.swift */,
+				7A60936F2918D54100CF9122 /* CarEntity+CoreDataProperties.swift */,
 				7AB6DD512914EDBE0013062C /* SOCARTestProject */,
 				7AB6DD502914EDBE0013062C /* Products */,
 			);
@@ -207,15 +207,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AB6DD572914EDBE0013062C /* MapViewController.swift in Sources */,
+				7A6093732918D54100CF9122 /* CarEntity+CoreDataProperties.swift in Sources */,
 				7A6093692918C55700CF9122 /* CarsDataParser.swift in Sources */,
 				7A60934D2918926700CF9122 /* CarListTableViewCell.swift in Sources */,
 				7A60934F2918935100CF9122 /* CarListTableCellView.swift in Sources */,
 				7A60932829185ACA00CF9122 /* Zone.swift in Sources */,
+				7A6093722918D54100CF9122 /* CarEntity+CoreDataClass.swift in Sources */,
 				7A60935B2918B90C00CF9122 /* CarListHeaderView.swift in Sources */,
 				7AB6DD6B29157E330013062C /* CarListViewController.swift in Sources */,
 				7A60933929186B7600CF9122 /* CoreDataManager.swift in Sources */,
-				7A6093652918C4EE00CF9122 /* CarEntity+CoreDataProperties.swift in Sources */,
-				7A6093642918C4EE00CF9122 /* CarEntity+CoreDataClass.swift in Sources */,
 				7AB6DD6929157E1D0013062C /* FavoriteZonesViewController.swift in Sources */,
 				7AB6DD67291579920013062C /* CoreLocationManager.swift in Sources */,
 				7AB6DD532914EDBE0013062C /* AppDelegate.swift in Sources */,
@@ -225,9 +225,9 @@
 				7A60932629185A6B00CF9122 /* Car.swift in Sources */,
 				7A60935D2918C2EA00CF9122 /* Constants.swift in Sources */,
 				7A60932D2918693F00CF9122 /* SocarModel.xcdatamodeld in Sources */,
-				7A6093672918C4EE00CF9122 /* ZoneEntity+CoreDataProperties.swift in Sources */,
+				7A6093712918D54100CF9122 /* ZoneEntity+CoreDataProperties.swift in Sources */,
 				7A60935F2918C41600CF9122 /* ZonesDataParser.swift in Sources */,
-				7A6093662918C4EE00CF9122 /* ZoneEntity+CoreDataClass.swift in Sources */,
+				7A6093702918D54100CF9122 /* ZoneEntity+CoreDataClass.swift in Sources */,
 				7AB6DD552914EDBE0013062C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

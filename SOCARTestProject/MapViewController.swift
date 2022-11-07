@@ -16,6 +16,7 @@ class MapViewController: UIViewController {
 	
 	var registeredZones: [Zone] = []
 	var registeredCars: [Car] = []
+	var zonesDictionary = Dictionary<String, [Car]>() // zone id : car id's
 	let dataProvider = DataProvider()
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -38,17 +39,16 @@ class MapViewController: UIViewController {
 		// populating data
 		dataProvider.getZones() // once zones are populated it will request for cars
 		
-		CoreDataManager.sharedManager.enlistZones(zoneList: socarZones)
 		// initializing annotations
 		registeredZones = CoreDataManager.sharedManager.getAllZones()
 //		CoreDataManager.sharedManager.enlistCarsForZone(carList: socarCarsPlace1, zone: registeredZones[0].name!)
 //		CoreDataManager.sharedManager.enlistCarsForZone(carList: socarCarsPlace2, zone: registeredZones[1].name!)
-		registeredZones.map {
-			let location = CLLocationCoordinate2D(latitude: $0.location?.lat ?? Double.greatestFiniteMagnitude, longitude: $0.location?.lng ?? Double.greatestFiniteMagnitude)
+		for zone in registeredZones {
+			let location = CLLocationCoordinate2D(latitude: zone.location?.lat ?? Double.greatestFiniteMagnitude, longitude: zone.location?.lng ?? Double.greatestFiniteMagnitude)
 			let socarAnnotation = ZoneAnnotation()
 			socarAnnotation.coordinate = location
 			socarAnnotation.title = "socar_zone"
-			socarAnnotation.annotationLabel = $0.name
+			socarAnnotation.annotationLabel = zone.name
 			map.addAnnotation(socarAnnotation)
 			if (map.visibleMapRect.contains(MKMapPoint(socarAnnotation.coordinate))) {
 				map.addAnnotation(socarAnnotation)
@@ -81,15 +81,27 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
 	}
 }
 extension MapViewController: ZoneCommunicationProtocol, CarCommunicationProtocol {
-	func notifyZoneDataProvided(_ zone: [Zone]) {
-		registeredZones = zone
+	func notifyZoneDataProvided(_ zones: [Zone]) {
+		registeredZones = zones
+		CoreDataManager.sharedManager.enlistZones(zoneList: registeredZones)
+		for zone in zones {
+			zonesDictionary[zone.id ?? "-1"] = []
+		}
 		dataProvider.getCars()
 	}
 	
 	func notifyCarDataProvided(_ cars: [Car]) {
 		registeredCars = cars
 		for car in cars {
-//			CoreDataManager.sharedManager.enlistCarsForZone(carList: socarCarsPlace1, zone: registeredZones[0].name!)
+			if let zones = car.zones {
+				for zone in zones {
+					zonesDictionary[zone]?.append(car)
+				}
+			}
+		}
+		for zone in zonesDictionary.keys {
+			let carsForZone = zonesDictionary[zone] ?? []
+			CoreDataManager.sharedManager.enlistCarsForZone(carList: carsForZone, zone: zone)
 		}
 	}
 }

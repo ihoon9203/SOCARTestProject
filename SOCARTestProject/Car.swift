@@ -13,21 +13,21 @@ struct Car: Codable {
 	var name: String?
 	var description: String?
 	var category: String?
-	var id: Int?
-	var zones: [Int]?
+	var id: String?
+	var zones: [String]?
 	init(_ entity: CarEntity) {
 		self.imageUrl = entity.image_name
 		self.name = entity.name
 		self.description = entity.desc
 		self.category = entity.type
-		self.id = Int(entity.id)
+		self.id = entity.id
 	}
 	init(imageName: String, name: String, description: String, type: String, number: Int) {
 		self.imageUrl = imageName
 		self.name = name
 		self.description = description
 		self.category = type
-		self.id = number
+		self.id = String(number)
 	}
 }
 enum CarType {

@@ -25,6 +25,7 @@ class CoreDataManager {
 				zoneContextObject.latitude = zone.location?.lat ?? Double.greatestFiniteMagnitude
 				zoneContextObject.longitude = zone.location?.lng ?? Double.greatestFiniteMagnitude
 				zoneContextObject.alias = zone.alias
+				zoneContextObject.id = zone.id
 				zoneContextObject.favorite = false
 			}
 			DispatchQueue.main.async {
@@ -84,8 +85,7 @@ class CoreDataManager {
 		// getting the zone to be linked with
 		let fetchZoneRequest = NSFetchRequest<ZoneEntity>(entityName: "ZoneEntity")
 		
-		// for now, title is being used as primary key
-		fetchZoneRequest.predicate = NSPredicate(format: "title = %@", zone)
+		fetchZoneRequest.predicate = NSPredicate(format: "id = %@", zone)
 		do {
 			let designatedZoneEntity = try managedContext.fetch(fetchZoneRequest)
 			designatedZone = designatedZoneEntity.first!
@@ -94,13 +94,23 @@ class CoreDataManager {
 		}
 		guard let carEntity = NSEntityDescription.entity(forEntityName: "CarEntity", in: managedContext) else { return }
 		for car in carList {
-			let carContextObject = NSManagedObject(entity:carEntity, insertInto: managedContext) as! CarEntity
-			carContextObject.designatedZone = designatedZone // linking car - zone
-			carContextObject.name = car.name
-			carContextObject.image_name = car.imageUrl
-			carContextObject.desc = car.description
-			carContextObject.type = car.category
-			carContextObject.id = Int64(car.id!)
+			let fetchCarRequest = NSFetchRequest<CarEntity>(entityName: "ZoneEntity")
+			// for now, title is being used as primary key
+			fetchCarRequest.predicate = NSPredicate(format: "id = %@", car.id!)
+			do {
+//				let designatedCarEntity = try managedContext.fetch(fetchCarRequest)
+//				let designatedCar = designatedCarEntity.first!
+				let carContextObject = NSManagedObject(entity:carEntity, insertInto: managedContext) as! CarEntity
+				carContextObject.designatedZone = designatedZone // linking car - zone
+				carContextObject.name = car.name
+				carContextObject.image_name = car.imageUrl
+				carContextObject.desc = car.description
+				carContextObject.type = car.category
+				carContextObject.id = car.id
+				carContextObject.designatedZone = designatedZone
+			} catch {
+				print(error)
+			}
 		}
 		DispatchQueue.main.async {
 			self.appDelegate.saveContext()

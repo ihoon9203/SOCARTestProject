@@ -21,6 +21,7 @@ extension ZoneEntity {
     @NSManaged public var name: String?
     @NSManaged public var alias: String?
     @NSManaged public var favorite: Bool
+    @NSManaged public var id: String?
     @NSManaged public var availableCars: NSSet?
 
 }

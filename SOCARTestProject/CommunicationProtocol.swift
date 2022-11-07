@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ZoneCommunicationProtocol: NSObject {
-	func notifyZoneDataProvided(_ zone: [Zone])
+	func notifyZoneDataProvided(_ zones: [Zone])
 }
 protocol CarCommunicationProtocol: NSObject {
 	func notifyCarDataProvided(_ cars: [Car])
