@@ -29,6 +29,14 @@ struct Zone {
 		self.latitude = latitude
 		self.longitude = longitude
 	}
+	// empty zone
+	init() {
+		self.longitude = Double.greatestFiniteMagnitude
+		self.latitude = Double.greatestFiniteMagnitude
+		self.favorite = false
+		self.title = "bad request"
+		self.alias = "bad request"
+	}
 }
 
 class ZoneAnnotationView: MKAnnotationView {
@@ -39,4 +47,11 @@ class ZoneAnnotationView: MKAnnotationView {
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+}
+class ZoneAnnotation: NSObject, MKAnnotation {
+	var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
+	var title: String?
+	var annotationLabel: String?
+	
+	
 }

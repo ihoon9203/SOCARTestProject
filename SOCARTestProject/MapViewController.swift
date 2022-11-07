@@ -28,7 +28,7 @@ class MapViewController: UIViewController {
 		// initializing dummy data (comment if not needed)
 		let socarZones: [Zone] = [
 			Zone(longitude: -111.872654, latitude: 40.766170, favorite: true, title: "place 1", alias: "good place"),
-			Zone(longitude: -111.864161, latitude: 40.757946, favorite: false, title: "place 1", alias: "good place")
+			Zone(longitude: -111.864161, latitude: 40.757946, favorite: false, title: "place 2", alias: "better place")
 		]
 		let socarCars: [Car] = [
 			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .electric),
@@ -45,9 +45,10 @@ class MapViewController: UIViewController {
 		registeredZones = CoreDataManager.sharedManager.getAllZones()
 		registeredZones.map {
 			let location = CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)
-			let socarAnnotation = MKPointAnnotation()
+			let socarAnnotation = ZoneAnnotation()
 			socarAnnotation.coordinate = location
 			socarAnnotation.title = "socar_zone"
+			socarAnnotation.annotationLabel = $0.title
 			map.addAnnotation(socarAnnotation)
 			if (map.visibleMapRect.contains(MKMapPoint(socarAnnotation.coordinate))) {
 				map.addAnnotation(socarAnnotation)
@@ -73,6 +74,9 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
 		}
 	}
 	func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
-		print(annotation.coordinate)
+		let annotation = annotation as! ZoneAnnotation
+		let carListVC = storyboard?.instantiateViewController(withIdentifier: "CarListVC") as! CarListViewController
+		carListVC.currentLocation = annotation.annotationLabel!
+		self.navigationController?.pushViewController(carListVC, animated: true)
 	}
 }

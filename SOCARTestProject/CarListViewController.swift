@@ -9,9 +9,17 @@ import UIKit
 
 class CarListViewController: UIViewController {
 	var availableCars: [Car] = []
-    override func viewDidLoad() {
+	var currentLocation: String?
+	@IBOutlet weak var location: UILabel!
+	@IBOutlet weak var locationAlias: UILabel!
+	@IBOutlet weak var favoriteImage: UIImageView!
+	override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+		let currentZone = CoreDataManager.sharedManager.getDesignatedZone(title: currentLocation ?? "location not registered")
+		location.text = currentZone.title
+		locationAlias.text = currentZone.alias
+		favoriteImage.image = currentZone.favorite ? UIImage(named: "_ic24_favorite_blue") : UIImage(named: "_ic24_favorite_gray")
+		availableCars = CoreDataManager.sharedManager.getAllCarsForZone(zone: currentLocation ?? "location not registered")
     }
     
 
@@ -25,4 +33,19 @@ class CarListViewController: UIViewController {
     }
     */
 
+}
+extension CarListViewController: UITableViewDelegate, UITableViewDataSource {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return availableCars.count
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "CarListTableViewCell") as! CarListTableViewCell
+		cell.title = availableCars[indexPath.row].name
+		cell.carDescription = availableCars[indexPath.row].description
+		cell.imageName = availableCars[indexPath.row].imageName
+		return cell
+	}
+	
+	
 }

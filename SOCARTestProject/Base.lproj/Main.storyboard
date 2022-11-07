@@ -142,7 +142,7 @@
         <!--Car List View Controller-->
         <scene sceneID="S3e-EK-fcg">
             <objects>
-                <viewController id="JYi-ID-A20" customClass="CarListViewController" customModule="SOCARTestProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CarListVC" id="JYi-ID-A20" customClass="CarListViewController" customModule="SOCARTestProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8r9-be-mh0">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,6 +187,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="S9t-Uh-g50">
                                 <rect key="frame" x="0.0" y="129" width="393" height="625"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CarListTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qFr-ZF-gme">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qFr-ZF-gme" id="pC1-19-Sr4" customClass="CarListTableViewCell" customModule="SOCARTestProject" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JsW-Ms-WXf"/>
@@ -202,6 +212,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tFt-Ia-Cul"/>
+                    <connections>
+                        <outlet property="favoriteImage" destination="8Ai-uF-9I4" id="TuI-PQ-av8"/>
+                        <outlet property="location" destination="KbC-c9-WZf" id="4tj-3b-ZdD"/>
+                        <outlet property="locationAlias" destination="dfm-Fz-lB8" id="Ew8-TY-PJS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mx-4i-LoO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

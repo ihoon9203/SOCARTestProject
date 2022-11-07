@@ -32,6 +32,23 @@ class CoreDataManager {
 			}
 		}
 	}
+	func getDesignatedZone(title: String) -> Zone {
+		var zone: Zone?
+		let fetchZoneRequest = NSFetchRequest<ZoneEntity>(entityName: "ZoneEntity")
+		fetchZoneRequest.predicate = NSPredicate(format: "title = %@", title)
+		do {
+			let zoneEntity = try managedContext.fetch(fetchZoneRequest)
+			if !zoneEntity.isEmpty {
+				zone = Zone(zoneEntity.first!)
+			} else {
+				zone = Zone()
+			}
+			return zone!
+		} catch {
+			print(error)
+			return Zone()
+		}
+	}
 	func getAllZones() -> [Zone] {
 		var zones: [Zone] = []
 		let fetchZonesRequest = NSFetchRequest<ZoneEntity>(entityName: "ZoneEntity")
@@ -59,7 +76,7 @@ class CoreDataManager {
 		}
 		return zones
 	}
-	func enlistCarsForZone(carList: [Car], zone: Zone) {
+	func enlistCarsForZone(carList: [Car], zone: String) {
 		if getAllZones().count == 0 {
 			var designatedZone: ZoneEntity?
 			guard let zoneEntity = NSEntityDescription.entity(forEntityName: "ZoneEntity", in: managedContext) else { return }
@@ -69,10 +86,8 @@ class CoreDataManager {
 			// getting the zone to be linked with
 			let fetchZoneRequest = NSFetchRequest<ZoneEntity>(entityName: "ZoneEntity")
 			
-			guard let zoneTitle = zone.title else { return }
-			
 			// for now, title is being used as primary key
-			fetchZoneRequest.predicate = NSPredicate(format: "title = %@", zoneTitle)
+			fetchZoneRequest.predicate = NSPredicate(format: "title = %@", zone)
 			do {
 				let designatedZoneEntity = try managedContext.fetch(fetchZoneRequest)
 				designatedZone = designatedZoneEntity.first!
@@ -92,18 +107,16 @@ class CoreDataManager {
 			}
 		}
 	}
-	func getAllCarsForZone(zone: Zone) -> [Car] {
+	func getAllCarsForZone(zone: String) -> [Car] {
 		var cars: [Car] = []
 		var designatedZone: ZoneEntity?
 		let fetchCarsRequest = NSFetchRequest<CarEntity>(entityName: "CarEntity")
 		
 		// getting the zone to be linked with
 		let fetchZoneRequest = NSFetchRequest<ZoneEntity>(entityName: "ZoneEntity")
-		   
-		guard let zoneTitle = zone.title else { return [] }
 
 		// for now, title is being used as primary key
-		fetchZoneRequest.predicate = NSPredicate(format: "title = %@", zoneTitle)
+		fetchZoneRequest.predicate = NSPredicate(format: "title = %@", zone)
 		do {
 		   let designatedZoneEntity = try managedContext.fetch(fetchZoneRequest)
 		   designatedZone = designatedZoneEntity.first!

@@ -17,6 +17,8 @@
 		7A6093482918755E00CF9122 /* CarEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6093442918755E00CF9122 /* CarEntity+CoreDataClass.swift */; };
 		7A6093492918755E00CF9122 /* CarEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6093452918755E00CF9122 /* CarEntity+CoreDataProperties.swift */; };
 		7A60934B29188EA000CF9122 /* FavoriteZoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60934A29188EA000CF9122 /* FavoriteZoneTableViewCell.swift */; };
+		7A60934D2918926700CF9122 /* CarListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60934C2918926700CF9122 /* CarListTableViewCell.swift */; };
+		7A60934F2918935100CF9122 /* CarListTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60934E2918935100CF9122 /* CarListTableCellView.swift */; };
 		7AB6DD532914EDBE0013062C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD522914EDBE0013062C /* AppDelegate.swift */; };
 		7AB6DD552914EDBE0013062C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD542914EDBE0013062C /* SceneDelegate.swift */; };
 		7AB6DD572914EDBE0013062C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD562914EDBE0013062C /* MapViewController.swift */; };
@@ -40,6 +42,8 @@
 		7A6093442918755E00CF9122 /* CarEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7A6093452918755E00CF9122 /* CarEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7A60934A29188EA000CF9122 /* FavoriteZoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteZoneTableViewCell.swift; sourceTree = "<group>"; };
+		7A60934C2918926700CF9122 /* CarListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListTableViewCell.swift; sourceTree = "<group>"; };
+		7A60934E2918935100CF9122 /* CarListTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListTableCellView.swift; sourceTree = "<group>"; };
 		7AB6DD4F2914EDBE0013062C /* SOCARTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOCARTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB6DD522914EDBE0013062C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AB6DD542914EDBE0013062C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,7 +96,9 @@
 				7AB6DD542914EDBE0013062C /* SceneDelegate.swift */,
 				7AB6DD562914EDBE0013062C /* MapViewController.swift */,
 				7AB6DD6829157E1D0013062C /* FavoriteZonesViewController.swift */,
+				7A60934A29188EA000CF9122 /* FavoriteZoneTableViewCell.swift */,
 				7AB6DD6A29157E330013062C /* CarListViewController.swift */,
+				7A60934C2918926700CF9122 /* CarListTableViewCell.swift */,
 				7AB6DD582914EDBE0013062C /* Main.storyboard */,
 				7AB6DD5B2914EDBF0013062C /* Assets.xcassets */,
 				7AB6DD5D2914EDBF0013062C /* LaunchScreen.storyboard */,
@@ -104,7 +110,7 @@
 				7A60932929185BFB00CF9122 /* DataProvider.swift */,
 				7A60932B2918693F00CF9122 /* SocarModel.xcdatamodeld */,
 				7A60933829186B7600CF9122 /* CoreDataManager.swift */,
-				7A60934A29188EA000CF9122 /* FavoriteZoneTableViewCell.swift */,
+				7A60934E2918935100CF9122 /* CarListTableCellView.swift */,
 			);
 			path = SOCARTestProject;
 			sourceTree = "<group>";
@@ -182,6 +188,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AB6DD572914EDBE0013062C /* MapViewController.swift in Sources */,
+				7A60934D2918926700CF9122 /* CarListTableViewCell.swift in Sources */,
+				7A60934F2918935100CF9122 /* CarListTableCellView.swift in Sources */,
 				7A60932829185ACA00CF9122 /* Zone.swift in Sources */,
 				7A6093462918755E00CF9122 /* ZoneEntity+CoreDataClass.swift in Sources */,
 				7AB6DD6B29157E330013062C /* CarListViewController.swift in Sources */,

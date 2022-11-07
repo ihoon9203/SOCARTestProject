@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CarListTableCellView" customModule="SOCARTestProject" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="393" height="129"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -24,13 +24,13 @@
                     <rect key="frame" x="131" y="32" width="230" height="65"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqa-eA-OXL">
-                            <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="230" height="20.333333333333332"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQA-YM-d7y">
-                            <rect key="frame" x="0.0" y="35" width="240" height="30"/>
+                            <rect key="frame" x="0.0" y="23.333333333333336" width="240" height="20.333333333333336"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -38,6 +38,8 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="VQA-YM-d7y" secondAttribute="trailing" constant="-10" id="EQM-81-F2v"/>
+                        <constraint firstItem="VQA-YM-d7y" firstAttribute="leading" secondItem="Gqa-eA-OXL" secondAttribute="leading" id="KYc-Py-tfE"/>
                         <constraint firstItem="VQA-YM-d7y" firstAttribute="top" secondItem="Gqa-eA-OXL" secondAttribute="bottom" constant="3" id="axI-83-4Oe"/>
                         <constraint firstItem="Gqa-eA-OXL" firstAttribute="top" secondItem="U6w-Bm-fec" secondAttribute="top" id="e9a-1C-ewJ"/>
                         <constraint firstAttribute="trailing" secondItem="Gqa-eA-OXL" secondAttribute="trailing" id="pmM-ka-Ga4"/>
@@ -58,6 +60,11 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="U6w-Bm-fec" secondAttribute="bottom" constant="32" id="ixz-kV-0wv"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="carDescription" destination="VQA-YM-d7y" id="FQ9-pQ-lJ2"/>
+                <outlet property="carImage" destination="8lN-mV-A66" id="DBd-tZ-OMJ"/>
+                <outlet property="carTitle" destination="Gqa-eA-OXL" id="aOV-D4-2fT"/>
+            </connections>
             <point key="canvasLocation" x="67.938931297709928" y="-15.140845070422536"/>
         </view>
     </objects>
