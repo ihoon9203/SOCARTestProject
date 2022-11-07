@@ -88,6 +88,15 @@ class MapViewController: UIViewController {
 		favoriteZoneButton.layer.shadowRadius = 0.0
 		favoriteZoneButton.layer.masksToBounds = false
 		
+		if let nib = Bundle.main.loadNibNamed("FavoriteButtonView", owner: self) {
+			let nib = nib.first as! UIView
+			nib.layer.cornerRadius = 0.5 * nib.bounds.height
+			let tapToViewFavoriteZones = UITapGestureRecognizer(target: self, action: #selector(pushFavoriteVC))
+			nib.addGestureRecognizer(tapToViewFavoriteZones)
+			favoriteZoneButton.addSubview(nib)
+			
+		}
+		
 		self.view.addSubview(favoriteZoneButton)
 	}
 	func createUserTrackingButton() {
