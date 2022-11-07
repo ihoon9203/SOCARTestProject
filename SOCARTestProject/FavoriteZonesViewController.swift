@@ -10,13 +10,14 @@ import UIKit
 class FavoriteZonesViewController: UIViewController {
 
 	@IBOutlet weak var favoritesTable: UITableView!
-	@IBOutlet weak var leftBarButton: UIBarButtonItem!
+	@IBOutlet weak var exitBarButton: UIBarButtonItem!
 	@IBAction func popToPrevious(_ sender: Any) {
 		self.navigationController?.popViewController(animated: true)
 	}
 	var favoriteZones: [Zone] = []
 	override func viewDidLoad() {
         super.viewDidLoad()
+		self.navigationItem.hidesBackButton = true
     }
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)

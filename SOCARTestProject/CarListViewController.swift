@@ -23,6 +23,11 @@ class CarListViewController: UIViewController {
 	@IBOutlet weak var locationAlias: UILabel!
 	@IBOutlet weak var favoriteImage: UIImageView!
 
+	@IBOutlet weak var backButtonItem: UIBarButtonItem!
+	
+	@IBAction func popToPreviousVC(_ sender: Any) {
+		self.navigationController?.popViewController(animated: true)
+	}
 	@IBAction func didToggleFavorite(_ sender: Any) {
 		CoreDataManager.sharedManager.toggleFavoriteZones(zone: zoneID)
 		if isFavorite {

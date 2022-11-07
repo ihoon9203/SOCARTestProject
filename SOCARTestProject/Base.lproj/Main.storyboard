@@ -108,16 +108,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="pJM-ul-hXJ">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="ic24_back" id="s2m-5T-BFf">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ic24_close" id="naQ-iG-z9t">
                             <color key="tintColor" systemColor="labelColor"/>
                             <connections>
-                                <action selector="popToPrevious:" destination="I7u-WC-eQK" id="FT8-EL-PQz"/>
+                                <action selector="popToPrevious:" destination="I7u-WC-eQK" id="P2P-tk-HDD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="exitBarButton" destination="naQ-iG-z9t" id="ANa-c6-qBb"/>
                         <outlet property="favoritesTable" destination="3jk-LX-ynu" id="7GN-SN-3SO"/>
-                        <outlet property="leftBarButton" destination="s2m-5T-BFf" id="y1J-Wo-Dhe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZN3-yo-7yE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -204,7 +204,16 @@
                             <constraint firstItem="9RJ-Yf-6Ps" firstAttribute="leading" secondItem="JsW-Ms-WXf" secondAttribute="leading" id="zZW-p6-m9I"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="1MX-vu-rCX">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="ic24_back" id="aNA-uL-Nrg">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="popToPreviousVC:" destination="JYi-ID-A20" id="nyF-Af-A4r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="backButtonItem" destination="aNA-uL-Nrg" id="q7x-lU-aVT"/>
                         <outlet property="favoriteImage" destination="8Ai-uF-9I4" id="GBs-Em-8g8"/>
                         <outlet property="location" destination="KbC-c9-WZf" id="4tj-3b-ZdD"/>
                         <outlet property="locationAlias" destination="dfm-Fz-lB8" id="Ew8-TY-PJS"/>
@@ -240,6 +249,7 @@
     </scenes>
     <resources>
         <image name="ic24_back" width="24" height="24"/>
+        <image name="ic24_close" width="24" height="24"/>
         <image name="img_zone" width="36" height="47"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
