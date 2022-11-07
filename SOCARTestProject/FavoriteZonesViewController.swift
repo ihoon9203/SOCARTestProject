@@ -35,7 +35,7 @@ extension FavoriteZonesViewController: UITableViewDelegate, UITableViewDataSourc
 	}
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let carListVC = storyboard?.instantiateViewController(withIdentifier: "CarListVC") as! CarListViewController
-		carListVC.currentLocation = favoriteZones[indexPath.row].name
+		carListVC.zoneID = favoriteZones[indexPath.row].id
 		self.navigationController?.pushViewController(carListVC, animated: true)
 	}
 	

@@ -48,7 +48,7 @@ class MapViewController: UIViewController {
 			let socarAnnotation = ZoneAnnotation()
 			socarAnnotation.coordinate = location
 			socarAnnotation.title = "socar_zone"
-			socarAnnotation.annotationLabel = zone.name
+			socarAnnotation.zoneID = zone.id
 			map.addAnnotation(socarAnnotation)
 			if (map.visibleMapRect.contains(MKMapPoint(socarAnnotation.coordinate))) {
 				map.addAnnotation(socarAnnotation)
@@ -76,7 +76,7 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
 	func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
 		let annotation = annotation as! ZoneAnnotation
 		let carListVC = storyboard?.instantiateViewController(withIdentifier: "CarListVC") as! CarListViewController
-		carListVC.currentLocation = annotation.annotationLabel!
+		carListVC.zoneID = annotation.zoneID!
 		self.navigationController?.pushViewController(carListVC, animated: true)
 	}
 }

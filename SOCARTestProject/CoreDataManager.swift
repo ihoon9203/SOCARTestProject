@@ -33,10 +33,10 @@ class CoreDataManager {
 			}
 		}
 	}
-	func getDesignatedZone(title: String) -> ZoneEntity? {
+	func getDesignatedZone(id: String) -> ZoneEntity? {
 		var zone: ZoneEntity?
 		let fetchZoneRequest = NSFetchRequest<ZoneEntity>(entityName: "ZoneEntity")
-		fetchZoneRequest.predicate = NSPredicate(format: "title = %@", title)
+		fetchZoneRequest.predicate = NSPredicate(format: "id = %@", id)
 		do {
 			let zoneEntity = try managedContext.fetch(fetchZoneRequest)
 			if !zoneEntity.isEmpty {
@@ -116,7 +116,7 @@ class CoreDataManager {
 			self.appDelegate.saveContext()
 		}
 	}
-	func getAllCarsForZone(zone: String) -> [Car] {
+	func getAllCarsForZone(id: String) -> [Car] {
 		var cars: [Car] = []
 		var designatedZone: ZoneEntity?
 		let fetchCarsRequest = NSFetchRequest<CarEntity>(entityName: "CarEntity")
@@ -125,7 +125,7 @@ class CoreDataManager {
 		let fetchZoneRequest = NSFetchRequest<ZoneEntity>(entityName: "ZoneEntity")
 
 		// for now, title is being used as primary key
-		fetchZoneRequest.predicate = NSPredicate(format: "title = %@", zone)
+		fetchZoneRequest.predicate = NSPredicate(format: "id = %@", id)
 		do {
 		   let designatedZoneEntity = try managedContext.fetch(fetchZoneRequest)
 		   designatedZone = designatedZoneEntity.first!

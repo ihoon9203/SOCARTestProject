@@ -47,5 +47,5 @@ class ZoneAnnotationView: MKAnnotationView {
 class ZoneAnnotation: NSObject, MKAnnotation {
 	var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
 	var title: String?
-	var annotationLabel: String?
+	var zoneID: String?
 }

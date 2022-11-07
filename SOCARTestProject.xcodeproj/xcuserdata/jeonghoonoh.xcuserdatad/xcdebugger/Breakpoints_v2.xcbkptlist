@@ -65,7 +65,7 @@
             startingLineNumber = "29"
             endingLineNumber = "29"
             landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -296,7 +296,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "FB2F4F8D-AAB6-4D47-958C-CDE1813B8EFD"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SOCARTestProject/CarListViewController.swift"

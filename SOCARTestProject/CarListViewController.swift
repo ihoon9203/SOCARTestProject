@@ -17,17 +17,17 @@ class CarListViewController: UIViewController {
 	var availableMID_SUVCars: 			[Car] = []
 	var availableMID_SEDANCars: 		[Car] = []
 	var uncategorizedCars:				[Car] = []
-	var currentLocation: String?
+	var zoneID: String!
 	@IBOutlet weak var location: UILabel!
 	@IBOutlet weak var locationAlias: UILabel!
 	@IBOutlet weak var favoriteImage: UIImageView!
 	override func viewDidLoad() {
         super.viewDidLoad()
-		let currentZone = CoreDataManager.sharedManager.getDesignatedZone(title: currentLocation ?? "location not registered")
+		let currentZone = CoreDataManager.sharedManager.getDesignatedZone(id: zoneID)
 		location.text = currentZone?.name
 		locationAlias.text = currentZone?.alias
 		favoriteImage.image = currentZone?.favorite ?? false ? UIImage(named: "_ic24_favorite_blue") : UIImage(named: "_ic24_favorite_gray")
-		availableCars = CoreDataManager.sharedManager.getAllCarsForZone(zone: currentLocation ?? "location not registered")
+		availableCars = CoreDataManager.sharedManager.getAllCarsForZone(id: zoneID)
 		for car in availableCars {
 			switch car.category {
 			case "EV":
