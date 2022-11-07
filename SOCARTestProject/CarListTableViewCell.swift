@@ -26,7 +26,11 @@ class CarListTableViewCell: UITableViewCell {
 	func loadViewFromNib() {
 		if let nib = Bundle.main.loadNibNamed("AvailableCarTVCell", owner: self),
 			let nibView = nib.first as? CarListTableCellView {
-			nibView.carImage.image = UIImage(named: imageName ?? "")
+			if let carImageName = imageName {
+				if let carImage = UIImage(named: carImageName) {
+					nibView.carImage.image = carImage
+				}
+			}
 			nibView.carTitle.text = title
 			nibView.carDescription.text = carDescription
 			DispatchQueue.global().async {
