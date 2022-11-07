@@ -23,6 +23,7 @@ class CarListViewController: UIViewController {
 	@IBOutlet weak var locationAlias: UILabel!
 	@IBOutlet weak var favoriteImage: UIImageView!
 
+	@IBOutlet weak var carTable: UITableView!
 	@IBOutlet weak var backButtonItem: UIBarButtonItem!
 	
 	@IBAction func popToPreviousVC(_ sender: Any) {
@@ -40,6 +41,10 @@ class CarListViewController: UIViewController {
 	}
 	override func viewDidLoad() {
         super.viewDidLoad()
+		// custom insets for each cells
+		carTable.separatorInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
+		// no seperator for header
+		carTable.sectionHeaderTopPadding = 0
 		let currentZone = CoreDataManager.sharedManager.getDesignatedZone(id: zoneID)
 		location.text = currentZone?.name
 		locationAlias.text = currentZone?.alias

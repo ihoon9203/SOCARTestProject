@@ -18,6 +18,7 @@ class FavoriteZonesViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 		self.navigationItem.hidesBackButton = true
+		favoritesTable.separatorInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
     }
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
