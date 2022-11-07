@@ -36,10 +36,10 @@ class MapViewController: UIViewController {
 			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .electric, number: 2),
 			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .electric, number: 3),
 			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .electric, number: 4),
-			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV, number: 5),
-			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV, number: 6),
-			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV, number: 7),
-			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV, number: 8)
+			Car(imageName: "ionic_electric", name: "아이오닉SUV", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV, number: 5),
+			Car(imageName: "ionic_electric", name: "아이오닉SUV", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV, number: 6),
+			Car(imageName: "ionic_electric", name: "아이오닉SUV", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV, number: 7),
+			Car(imageName: "ionic_electric", name: "아이오닉SUV", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV, number: 8)
 		]
 		let socarCarsPlace2: [Car] = [
 			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .electric, number: 10),
@@ -47,10 +47,10 @@ class MapViewController: UIViewController {
 			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .electric, number: 12),
 			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .electric, number: 13),
 			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .electric, number: 14),
-			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV, number: 15),
-			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV, number: 16),
-			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV, number: 17),
-			Car(imageName: "ionic_electric", name: "아이오닉일렉트릭", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV, number: 18)
+			Car(imageName: "ionic_electric", name: "아이오닉SUV", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV, number: 15),
+			Car(imageName: "ionic_electric", name: "아이오닉SUV", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV, number: 16),
+			Car(imageName: "ionic_electric", name: "아이오닉SUV", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV, number: 17),
+			Car(imageName: "ionic_electric", name: "아이오닉SUV", description: "완전 멀리까지 갈 수 있는 아이오닉!", type: .smallSUV, number: 18)
 		]
 		CoreDataManager.sharedManager.enlistZones(zoneList: socarZones)
 		// initializing annotations

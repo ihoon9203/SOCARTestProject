@@ -19,6 +19,8 @@
 		7A60934F2918935100CF9122 /* CarListTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60934E2918935100CF9122 /* CarListTableCellView.swift */; };
 		7A6093542918A8FC00CF9122 /* CarEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6093522918A8FC00CF9122 /* CarEntity+CoreDataClass.swift */; };
 		7A6093552918A8FC00CF9122 /* CarEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6093532918A8FC00CF9122 /* CarEntity+CoreDataProperties.swift */; };
+		7A6093592918B86D00CF9122 /* CarListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A6093582918B86D00CF9122 /* CarListHeaderView.xib */; };
+		7A60935B2918B90C00CF9122 /* CarListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60935A2918B90C00CF9122 /* CarListHeaderView.swift */; };
 		7AB6DD532914EDBE0013062C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD522914EDBE0013062C /* AppDelegate.swift */; };
 		7AB6DD552914EDBE0013062C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD542914EDBE0013062C /* SceneDelegate.swift */; };
 		7AB6DD572914EDBE0013062C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD562914EDBE0013062C /* MapViewController.swift */; };
@@ -44,6 +46,8 @@
 		7A60934E2918935100CF9122 /* CarListTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListTableCellView.swift; sourceTree = "<group>"; };
 		7A6093522918A8FC00CF9122 /* CarEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7A6093532918A8FC00CF9122 /* CarEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A6093582918B86D00CF9122 /* CarListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarListHeaderView.xib; sourceTree = "<group>"; };
+		7A60935A2918B90C00CF9122 /* CarListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListHeaderView.swift; sourceTree = "<group>"; };
 		7AB6DD4F2914EDBE0013062C /* SOCARTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOCARTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB6DD522914EDBE0013062C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AB6DD542914EDBE0013062C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				7A60932B2918693F00CF9122 /* SocarModel.xcdatamodeld */,
 				7A60933829186B7600CF9122 /* CoreDataManager.swift */,
 				7A60934E2918935100CF9122 /* CarListTableCellView.swift */,
+				7A6093582918B86D00CF9122 /* CarListHeaderView.xib */,
+				7A60935A2918B90C00CF9122 /* CarListHeaderView.swift */,
 			);
 			path = SOCARTestProject;
 			sourceTree = "<group>";
@@ -177,6 +183,7 @@
 				7AB6DD5F2914EDBF0013062C /* LaunchScreen.storyboard in Resources */,
 				7AB6DD5C2914EDBF0013062C /* Assets.xcassets in Resources */,
 				7AB6DD5A2914EDBE0013062C /* Main.storyboard in Resources */,
+				7A6093592918B86D00CF9122 /* CarListHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +200,7 @@
 				7A60932829185ACA00CF9122 /* Zone.swift in Sources */,
 				7A6093462918755E00CF9122 /* ZoneEntity+CoreDataClass.swift in Sources */,
 				7A6093552918A8FC00CF9122 /* CarEntity+CoreDataProperties.swift in Sources */,
+				7A60935B2918B90C00CF9122 /* CarListHeaderView.swift in Sources */,
 				7AB6DD6B29157E330013062C /* CarListViewController.swift in Sources */,
 				7A60933929186B7600CF9122 /* CoreDataManager.swift in Sources */,
 				7AB6DD6929157E1D0013062C /* FavoriteZonesViewController.swift in Sources */,

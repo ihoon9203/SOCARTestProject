@@ -99,6 +99,12 @@ class CoreDataManager {
 			carContextObject.name = car.name
 			carContextObject.image_name = car.imageName
 			carContextObject.desc = car.carDescription
+			switch car.type {
+			case .electric:
+				carContextObject.type = "electric"
+			default:
+				carContextObject.type = "small_suv"
+			}
 			carContextObject.number = Int64(car.number!)
 		}
 		DispatchQueue.main.async {

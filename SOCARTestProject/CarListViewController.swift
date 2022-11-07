@@ -9,6 +9,8 @@ import UIKit
 
 class CarListViewController: UIViewController {
 	var availableCars: [Car] = []
+	var availableElectricCars: [Car] = []
+	var availableSmallSUVCars: [Car] = []
 	var currentLocation: String?
 	@IBOutlet weak var location: UILabel!
 	@IBOutlet weak var locationAlias: UILabel!
@@ -20,37 +22,63 @@ class CarListViewController: UIViewController {
 		locationAlias.text = currentZone.alias
 		favoriteImage.image = currentZone.favorite ? UIImage(named: "_ic24_favorite_blue") : UIImage(named: "_ic24_favorite_gray")
 		availableCars = CoreDataManager.sharedManager.getAllCarsForZone(zone: currentLocation ?? "location not registered")
+		for car in availableCars {
+			if car.type == .electric {
+				availableElectricCars.append(car)
+			} else {
+				availableSmallSUVCars.append(car)
+			}
+		}
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 extension CarListViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return availableCars.count
+		switch section {
+		case 0:
+			return availableElectricCars.count
+		default:
+			return availableSmallSUVCars.count
+		}
 	}
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return CGFloat(129)
 	}
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "AvailableCar") as! CarListTableViewCell
-		cell.title = availableCars[indexPath.row].name
-		cell.carDescription = availableCars[indexPath.row].carDescription
-		cell.imageName = availableCars[indexPath.row].imageName
+		switch indexPath.section {
+		case 0:
+			cell.title = availableElectricCars[indexPath.row].name
+			cell.carDescription = availableElectricCars[indexPath.row].carDescription
+			cell.imageName = availableElectricCars[indexPath.row].imageName
+			
+		default:
+			cell.title = availableSmallSUVCars[indexPath.row].name
+			cell.carDescription = availableSmallSUVCars[indexPath.row].carDescription
+			cell.imageName = availableSmallSUVCars[indexPath.row].imageName
+		}
 		cell.awakeFromNib()
 		return cell
 	}
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 		return CGFloat(56)
+	}
+	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		let view = UIView()
+		if let nib = Bundle.main.loadNibNamed("CarListHeaderView", owner: self),
+			let nibView = nib.first as? CarListHeaderView {
+			switch section {
+			case 0:
+				nibView.carType.text = "전기"
+			default:
+				nibView.carType.text = "소형 SUV"
+			}
+			return nibView
+		}
+		return view
+	}
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return 2
 	}
 	
 }

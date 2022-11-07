@@ -33,6 +33,11 @@ extension FavoriteZonesViewController: UITableViewDelegate, UITableViewDataSourc
 		cell.latitude = favoriteZones[indexPath.row].latitude
 		return cell
 	}
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let carListVC = storyboard?.instantiateViewController(withIdentifier: "CarListVC") as! CarListViewController
+		carListVC.currentLocation = favoriteZones[indexPath.row].title
+		self.navigationController?.pushViewController(carListVC, animated: true)
+	}
 	
 	
 }
