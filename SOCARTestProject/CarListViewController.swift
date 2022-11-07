@@ -30,6 +30,7 @@ class CarListViewController: UIViewController {
 		self.navigationController?.popViewController(animated: true)
 	}
 	@IBAction func didToggleFavorite(_ sender: Any) {
+		// on toggle change favorite state
 		CoreDataManager.sharedManager.toggleFavoriteZones(zone: zoneID)
 		if isFavorite {
 			isFavorite = false

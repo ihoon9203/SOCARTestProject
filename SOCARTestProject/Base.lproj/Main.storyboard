@@ -25,10 +25,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C3G-yL-epa" secondAttribute="bottom" constant="-34" id="CX2-aB-Z4J"/>
-                            <constraint firstItem="C3G-yL-epa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-103" id="CgA-gN-dsB"/>
-                            <constraint firstItem="C3G-yL-epa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Fzu-6s-Llg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C3G-yL-epa" secondAttribute="trailing" id="K02-kU-8JG"/>
+                            <constraint firstItem="C3G-yL-epa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9Bm-uf-bB7"/>
+                            <constraint firstItem="C3G-yL-epa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QCc-Wj-NA6"/>
+                            <constraint firstAttribute="trailing" secondItem="C3G-yL-epa" secondAttribute="trailing" id="V6V-Dk-aHN"/>
+                            <constraint firstAttribute="bottom" secondItem="C3G-yL-epa" secondAttribute="bottom" id="kMc-XF-RAQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="byo-im-4WO"/>
@@ -116,7 +116,9 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="J8q-4I-6bD" secondAttribute="bottom" constant="15" id="0jd-G8-83W"/>
                                     <constraint firstAttribute="height" constant="100" id="9cq-nT-BoG"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="J8q-4I-6bD" secondAttribute="trailing" constant="20" symbolic="YES" id="Ghh-KH-c1n"/>
                                     <constraint firstAttribute="width" constant="393" id="a3L-2f-vWE"/>
+                                    <constraint firstItem="J8q-4I-6bD" firstAttribute="top" secondItem="IOl-OT-szA" secondAttribute="top" priority="250" constant="53.670000000000002" id="fgB-Bx-b2j"/>
                                     <constraint firstItem="J8q-4I-6bD" firstAttribute="leading" secondItem="IOl-OT-szA" secondAttribute="leading" constant="18" id="hTY-hF-Usj"/>
                                 </constraints>
                             </view>
