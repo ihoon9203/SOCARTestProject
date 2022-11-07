@@ -11,8 +11,8 @@ class CarsDataParser {
 		let task = URLSession.shared.dataTask(with: request) { data, response, error in
 			do {
 				if let data = data {
-					let carList = try JSONDecoder().decode(Car.self, from: data )
-					onSuccess(carList.response)
+					let carList = try JSONDecoder().decode([Car].self, from: data )
+					onSuccess(carList)
 				}
 			} catch {
 				print("1")

@@ -44,7 +44,7 @@ class MapViewController: UIViewController {
 //		CoreDataManager.sharedManager.enlistCarsForZone(carList: socarCarsPlace1, zone: registeredZones[0].name!)
 //		CoreDataManager.sharedManager.enlistCarsForZone(carList: socarCarsPlace2, zone: registeredZones[1].name!)
 		registeredZones.map {
-			let location = CLLocationCoordinate2D(latitude: $0.latitude, longitude: $0.longitude)
+			let location = CLLocationCoordinate2D(latitude: $0.location?.lat ?? Double.greatestFiniteMagnitude, longitude: $0.location?.lng ?? Double.greatestFiniteMagnitude)
 			let socarAnnotation = ZoneAnnotation()
 			socarAnnotation.coordinate = location
 			socarAnnotation.title = "socar_zone"

@@ -9,31 +9,23 @@ import Foundation
 import MapKit
 
 struct Zone: Codable {
-	var longitude: Double
-	var latitude: Double
-	var id: Int
-	var favorite: Bool
+	var location: Location?
+	var id: Int?
 	var name: String?
 	var alias: String?
 	init(_ entity: ZoneEntity) {
 		self.name = entity.name
 		self.alias = entity.alias
-		self.favorite = entity.favorite
-		self.latitude = entity.latitude
-		self.longitude = entity.longitude
+		self.location = Location(lat: entity.latitude, lng: entity.longitude)
 	}
 	init(longitude: Double, latitude: Double, favorite: Bool, title: String, alias: String) {
 		self.name = title
 		self.alias = alias
-		self.favorite = favorite
-		self.latitude = latitude
-		self.longitude = longitude
+		self.location = Location(lat: latitude, lng: longitude)
 	}
 	// empty zone
 	init() {
-		self.longitude = Double.greatestFiniteMagnitude
-		self.latitude = Double.greatestFiniteMagnitude
-		self.favorite = false
+		self.location = Location(lat: Double.greatestFiniteMagnitude, lng: Double.greatestFiniteMagnitude)
 		self.name = "bad request"
 		self.alias = "bad request"
 	}
@@ -48,10 +40,12 @@ class ZoneAnnotationView: MKAnnotationView {
 		fatalError("init(coder:) has not been implemented")
 	}
 }
+struct Location: Codable {
+	var lat: Double?
+	var lng: Double?
+}
 class ZoneAnnotation: NSObject, MKAnnotation {
 	var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()
 	var title: String?
 	var annotationLabel: String?
-	
-	
 }

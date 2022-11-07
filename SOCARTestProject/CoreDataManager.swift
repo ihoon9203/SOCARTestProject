@@ -22,31 +22,31 @@ class CoreDataManager {
 			for zone in zoneList {
 				let zoneContextObject = NSManagedObject(entity:zoneEntity, insertInto: managedContext) as! ZoneEntity
 				zoneContextObject.name = zone.name
-				zoneContextObject.latitude = zone.latitude
-				zoneContextObject.longitude = zone.longitude
+				zoneContextObject.latitude = zone.location?.lat ?? Double.greatestFiniteMagnitude
+				zoneContextObject.longitude = zone.location?.lng ?? Double.greatestFiniteMagnitude
 				zoneContextObject.alias = zone.alias
-				zoneContextObject.favorite = zone.favorite
+				zoneContextObject.favorite = false
 			}
 			DispatchQueue.main.async {
 				self.appDelegate.saveContext()
 			}
 		}
 	}
-	func getDesignatedZone(title: String) -> Zone {
-		var zone: Zone?
+	func getDesignatedZone(title: String) -> ZoneEntity? {
+		var zone: ZoneEntity?
 		let fetchZoneRequest = NSFetchRequest<ZoneEntity>(entityName: "ZoneEntity")
 		fetchZoneRequest.predicate = NSPredicate(format: "title = %@", title)
 		do {
 			let zoneEntity = try managedContext.fetch(fetchZoneRequest)
 			if !zoneEntity.isEmpty {
-				zone = Zone(zoneEntity.first!)
+				zone = zoneEntity.first!
 			} else {
-				zone = Zone()
+				return nil
 			}
 			return zone!
 		} catch {
 			print(error)
-			return Zone()
+			return nil
 		}
 	}
 	func getAllZones() -> [Zone] {
@@ -99,12 +99,7 @@ class CoreDataManager {
 			carContextObject.name = car.name
 			carContextObject.image_name = car.imageUrl
 			carContextObject.desc = car.description
-			switch car.category {
-			case .electric:
-				carContextObject.type = "electric"
-			default:
-				carContextObject.type = "small_suv"
-			}
+			carContextObject.type = car.category
 			carContextObject.id = Int64(car.id!)
 		}
 		DispatchQueue.main.async {

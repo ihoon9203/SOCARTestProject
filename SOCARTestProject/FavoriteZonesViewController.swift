@@ -29,8 +29,8 @@ extension FavoriteZonesViewController: UITableViewDelegate, UITableViewDataSourc
 		let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteZone") as! FavoriteZoneTableViewCell
 		cell.titleLabel.text = favoriteZones[indexPath.row].name
 		cell.aliasLabel.text = favoriteZones[indexPath.row].alias
-		cell.longitude = favoriteZones[indexPath.row].longitude
-		cell.latitude = favoriteZones[indexPath.row].latitude
+		cell.longitude = favoriteZones[indexPath.row].location?.lat
+		cell.latitude = favoriteZones[indexPath.row].location?.lng
 		return cell
 	}
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
