@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "86A11053-6A67-4177-BD35-3CAF18047D59"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SOCARTestProject/MapViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "0AD88AB0-7D0A-4762-8341-F196C7C0E691"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -94,10 +78,10 @@
             filePath = "SOCARTestProject/CoreDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "getAllCarsForZone(id:)"
-            landmarkType = "7">
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "CoreDataManager"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -110,8 +94,8 @@
             filePath = "SOCARTestProject/CoreDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "getAllCarsForZone(id:)"
             landmarkType = "7">
             <Locations>
@@ -158,8 +142,8 @@
             filePath = "SOCARTestProject/CoreDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "getAllCarsForZone(id:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +158,8 @@
             filePath = "SOCARTestProject/CoreDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "enlistCarsForZone(carList:zone:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,8 +270,8 @@
             filePath = "SOCARTestProject/CoreDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "enlistZones(zoneList:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,8 +286,8 @@
             filePath = "SOCARTestProject/CoreDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "enlistCarsForZone(carList:zone:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -318,8 +302,8 @@
             filePath = "SOCARTestProject/CoreDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "getAllZones()"
             landmarkType = "7">
          </BreakpointContent>
@@ -385,6 +369,134 @@
             startingLineNumber = "95"
             endingLineNumber = "95"
             landmarkName = "createFavortieZoneButton()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94E58D63-EC16-4E26-AF4F-57160C07B99D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SOCARTestProject/CoreDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "enlistCarsForZone(carList:zone:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D88EFDB1-CA8E-4695-A026-EB7A0F130D70"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SOCARTestProject/CoreDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "enlistCarsForZone(carList:zone:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "078B47E0-198E-49BA-83D0-06C5E3BC7FBA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SOCARTestProject/CoreDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "enlistZones(zoneList:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B25B30D-5291-47D3-BF27-291FBBD9B4F9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SOCARTestProject/CoreDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "enlistCarsForZone(carList:zone:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0B25B30D-5291-47D3-BF27-291FBBD9B4F9 - cceeb5eb6adcb442"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SOCARTestProject.CoreDataManager.enlistCarsForZone(carList: Swift.Array&lt;SOCARTestProject.Car&gt;, zone: Swift.String) -&gt; ()"
+                  moduleName = "SOCARTestProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeonghoonoh/Documents/Valid%20Project/SOCARTestProject/SOCARTestProject/CoreDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "1904">
+               </Location>
+               <Location
+                  uuid = "0B25B30D-5291-47D3-BF27-291FBBD9B4F9 - 95b69f2df6c74eca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SOCARTestProject.CarEntity) -&gt; Swift.Optional&lt;Swift.String&gt; in SOCARTestProject.CoreDataManager.enlistCarsForZone(carList: Swift.Array&lt;SOCARTestProject.Car&gt;, zone: Swift.String) -&gt; ()"
+                  moduleName = "SOCARTestProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeonghoonoh/Documents/Valid%20Project/SOCARTestProject/SOCARTestProject/CoreDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DB40E6FD-C231-4721-B3A1-8283212DA1AB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SOCARTestProject/CoreDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "enlistCarsForZone(carList:zone:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42F8B3AC-9523-408F-8201-F3B3231067E4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SOCARTestProject/CoreDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "enlistCarsForZone(carList:zone:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

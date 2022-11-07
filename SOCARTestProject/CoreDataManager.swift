@@ -17,9 +17,12 @@ class CoreDataManager {
 		managedContext = appDelegate.persistentContainer.viewContext
 	}
 	func enlistZones(zoneList: [Zone]) {
-		if getAllZones().count == 0 {
-			guard let zoneEntity = NSEntityDescription.entity(forEntityName: "ZoneEntity", in: managedContext) else { return }// creating reference from data model
-			for zone in zoneList {
+		guard let zoneEntity = NSEntityDescription.entity(forEntityName: "ZoneEntity", in: managedContext) else { return }// creating reference from data model
+		for zone in zoneList {
+			let fetchZoneRequest = NSFetchRequest<ZoneEntity>(entityName: "ZoneEntity")
+			fetchZoneRequest.predicate = NSPredicate(format: "id = %@", zone.id!)
+			let existingZone = try? managedContext.fetch(fetchZoneRequest)
+			if existingZone?.count == 0 {
 				let zoneContextObject = NSManagedObject(entity:zoneEntity, insertInto: managedContext) as! ZoneEntity
 				zoneContextObject.name = zone.name
 				zoneContextObject.latitude = zone.location?.lat ?? Double.greatestFiniteMagnitude
@@ -28,9 +31,11 @@ class CoreDataManager {
 				zoneContextObject.id = zone.id
 				zoneContextObject.favorite = false
 			}
-			DispatchQueue.main.async {
-				self.appDelegate.saveContext()
-			}
+			
+			
+		}
+		DispatchQueue.main.async {
+			self.appDelegate.saveContext()
 		}
 	}
 	func getDesignatedZone(id: String) -> ZoneEntity? {
@@ -97,8 +102,6 @@ class CoreDataManager {
 	}
 	func enlistCarsForZone(carList: [Car], zone: String) {
 		var designatedZone: ZoneEntity?
-		
-		
 		// getting the zone to be linked with
 		let fetchZoneRequest = NSFetchRequest<ZoneEntity>(entityName: "ZoneEntity")
 		
@@ -108,20 +111,30 @@ class CoreDataManager {
 			designatedZone = designatedZoneEntity.first!
 		} catch {
 			print(error)
+			return
 		}
 		guard let carEntity = NSEntityDescription.entity(forEntityName: "CarEntity", in: managedContext) else { return }
 		for car in carList {
-			let fetchCarRequest = NSFetchRequest<CarEntity>(entityName: "ZoneEntity")
+			let fetchCarRequest = NSFetchRequest<CarEntity>(entityName: "CarEntity")
+			guard let result = designatedZone?.availableCars else { return }
+			let availableCarEntities = result.allObjects as! [CarEntity]
+			let availableCarsID = availableCarEntities.map { car in
+				car.id
+			}
 			// for now, title is being used as primary key
 			fetchCarRequest.predicate = NSPredicate(format: "id = %@", car.id!)
-			let carContextObject = NSManagedObject(entity:carEntity, insertInto: managedContext) as! CarEntity
-			carContextObject.designatedZone = designatedZone // linking car - zone
-			carContextObject.name = car.name
-			carContextObject.image_name = car.imageUrl
-			carContextObject.desc = car.description
-			carContextObject.type = car.category
-			carContextObject.id = car.id
-			carContextObject.designatedZone = designatedZone
+			let newCarID = try? managedContext.fetch(fetchCarRequest).first?.id
+			if !availableCarsID.contains(newCarID) {
+				let carContextObject = NSManagedObject(entity:carEntity, insertInto: managedContext) as! CarEntity
+				carContextObject.designatedZone = designatedZone // linking car - zone
+				carContextObject.name = car.name
+				carContextObject.image_name = car.imageUrl
+				carContextObject.desc = car.description
+				carContextObject.type = car.category
+				carContextObject.id = car.id
+				carContextObject.designatedZone = designatedZone
+			}
+			
 		}
 		DispatchQueue.main.async {
 			self.appDelegate.saveContext()
