@@ -18,7 +18,7 @@ class CarListViewController: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 		let currentZone = CoreDataManager.sharedManager.getDesignatedZone(title: currentLocation ?? "location not registered")
-		location.text = currentZone.title
+		location.text = currentZone.name
 		locationAlias.text = currentZone.alias
 		favoriteImage.image = currentZone.favorite ? UIImage(named: "_ic24_favorite_blue") : UIImage(named: "_ic24_favorite_gray")
 		availableCars = CoreDataManager.sharedManager.getAllCarsForZone(zone: currentLocation ?? "location not registered")
@@ -49,13 +49,13 @@ extension CarListViewController: UITableViewDelegate, UITableViewDataSource {
 		switch indexPath.section {
 		case 0:
 			cell.title = availableElectricCars[indexPath.row].name
-			cell.carDescription = availableElectricCars[indexPath.row].carDescription
-			cell.imageName = availableElectricCars[indexPath.row].imageName
+			cell.carDescription = availableElectricCars[indexPath.row].description
+			cell.imageName = availableElectricCars[indexPath.row].imageUrl
 			
 		default:
 			cell.title = availableSmallSUVCars[indexPath.row].name
-			cell.carDescription = availableSmallSUVCars[indexPath.row].carDescription
-			cell.imageName = availableSmallSUVCars[indexPath.row].imageName
+			cell.carDescription = availableSmallSUVCars[indexPath.row].description
+			cell.imageName = availableSmallSUVCars[indexPath.row].imageUrl
 		}
 		cell.awakeFromNib()
 		return cell

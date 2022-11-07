@@ -8,29 +8,26 @@
 import Foundation
 import UIKit
 
-struct Car {
-	var imageName: String?
+struct Car: Codable {
+	var imageUrl: String?
 	var name: String?
-	var carDescription: String?
-	var type: CarType
-	var number: Int?
+	var description: String?
+	var category: String?
+	var id: Int?
+	var zones: [Int]?
 	init(_ entity: CarEntity) {
-		self.imageName = entity.image_name
+		self.imageUrl = entity.image_name
 		self.name = entity.name
-		self.carDescription = entity.desc
-		if entity.type == "electric" {
-			type = .electric
-		} else {
-			type = .smallSUV
-		}
-		self.number = Int(entity.number)
+		self.description = entity.desc
+		self.category = entity.type
+		self.id = Int(entity.id)
 	}
-	init(imageName: String, name: String, description: String, type: CarType, number: Int) {
-		self.imageName = imageName
+	init(imageName: String, name: String, description: String, type: String, number: Int) {
+		self.imageUrl = imageName
 		self.name = name
-		self.carDescription = description
-		self.type = type
-		self.number = number
+		self.description = description
+		self.category = type
+		self.id = number
 	}
 }
 enum CarType {

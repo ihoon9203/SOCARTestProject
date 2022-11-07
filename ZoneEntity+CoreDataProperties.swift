@@ -18,7 +18,7 @@ extension ZoneEntity {
 
     @NSManaged public var longitude: Double
     @NSManaged public var latitude: Double
-    @NSManaged public var title: String?
+    @NSManaged public var name: String?
     @NSManaged public var alias: String?
     @NSManaged public var favorite: Bool
     @NSManaged public var availableCars: NSSet?

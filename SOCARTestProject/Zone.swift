@@ -8,22 +8,22 @@
 import Foundation
 import MapKit
 
-struct Zone {
+struct Zone: Codable {
 	var longitude: Double
 	var latitude: Double
-	
+	var id: Int
 	var favorite: Bool
-	var title: String?
+	var name: String?
 	var alias: String?
 	init(_ entity: ZoneEntity) {
-		self.title = entity.title
+		self.name = entity.name
 		self.alias = entity.alias
 		self.favorite = entity.favorite
 		self.latitude = entity.latitude
 		self.longitude = entity.longitude
 	}
 	init(longitude: Double, latitude: Double, favorite: Bool, title: String, alias: String) {
-		self.title = title
+		self.name = title
 		self.alias = alias
 		self.favorite = favorite
 		self.latitude = latitude
@@ -34,7 +34,7 @@ struct Zone {
 		self.longitude = Double.greatestFiniteMagnitude
 		self.latitude = Double.greatestFiniteMagnitude
 		self.favorite = false
-		self.title = "bad request"
+		self.name = "bad request"
 		self.alias = "bad request"
 	}
 }

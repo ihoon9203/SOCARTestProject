@@ -21,7 +21,7 @@ class CoreDataManager {
 			guard let zoneEntity = NSEntityDescription.entity(forEntityName: "ZoneEntity", in: managedContext) else { return }// creating reference from data model
 			for zone in zoneList {
 				let zoneContextObject = NSManagedObject(entity:zoneEntity, insertInto: managedContext) as! ZoneEntity
-				zoneContextObject.title = zone.title
+				zoneContextObject.name = zone.name
 				zoneContextObject.latitude = zone.latitude
 				zoneContextObject.longitude = zone.longitude
 				zoneContextObject.alias = zone.alias
@@ -97,15 +97,15 @@ class CoreDataManager {
 			let carContextObject = NSManagedObject(entity:carEntity, insertInto: managedContext) as! CarEntity
 			carContextObject.designatedZone = designatedZone // linking car - zone
 			carContextObject.name = car.name
-			carContextObject.image_name = car.imageName
-			carContextObject.desc = car.carDescription
-			switch car.type {
+			carContextObject.image_name = car.imageUrl
+			carContextObject.desc = car.description
+			switch car.category {
 			case .electric:
 				carContextObject.type = "electric"
 			default:
 				carContextObject.type = "small_suv"
 			}
-			carContextObject.number = Int64(car.number!)
+			carContextObject.id = Int64(car.id!)
 		}
 		DispatchQueue.main.async {
 			self.appDelegate.saveContext()

@@ -27,7 +27,7 @@ extension FavoriteZonesViewController: UITableViewDelegate, UITableViewDataSourc
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteZone") as! FavoriteZoneTableViewCell
-		cell.titleLabel.text = favoriteZones[indexPath.row].title
+		cell.titleLabel.text = favoriteZones[indexPath.row].name
 		cell.aliasLabel.text = favoriteZones[indexPath.row].alias
 		cell.longitude = favoriteZones[indexPath.row].longitude
 		cell.latitude = favoriteZones[indexPath.row].latitude
@@ -35,7 +35,7 @@ extension FavoriteZonesViewController: UITableViewDelegate, UITableViewDataSourc
 	}
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let carListVC = storyboard?.instantiateViewController(withIdentifier: "CarListVC") as! CarListViewController
-		carListVC.currentLocation = favoriteZones[indexPath.row].title
+		carListVC.currentLocation = favoriteZones[indexPath.row].name
 		self.navigationController?.pushViewController(carListVC, animated: true)
 	}
 	
