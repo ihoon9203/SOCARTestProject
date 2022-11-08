@@ -23,6 +23,8 @@ class DataProvider {
 			
 			zonesDataParser.parseRequestToZones(request: request) { zones in
 				CoreDataManager.sharedManager.enlistZones(zoneList: zones)
+				// once zone data are fetched, get cars data
+				self.getCars()
 				for zone in zones {
 					// if any case zone id doesn't exist set -1 as its id
 					self.zonesDictionary[zone.id ?? "-1"] = []
@@ -35,7 +37,6 @@ class DataProvider {
 					socarAnnotation.zoneID = zone.id
 					self.annotations.append(socarAnnotation)
 				}
-				self.getCars()
 				// notify to annotate the map
 				self.zoneDelegate?.notifyZoneDataProvided(self.annotations)
 			} onFailure: { error in
@@ -58,7 +59,7 @@ class DataProvider {
 				}
 				for zone in self.zonesDictionary.keys {
 					let carsForZone = self.zonesDictionary[zone] ?? []
-					CoreDataManager.sharedManager.enlistCarsForZone(carList: carsForZone, zone: zone)
+					CoreDataManager.sharedManager.enlistCarsForZone(carList: carsForZone, id: zone)
 				}
 			} onFailure: { error in
 				print(error)

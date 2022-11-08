@@ -29,9 +29,10 @@ class CarListViewController: UIViewController {
 	@IBAction func popToPreviousVC(_ sender: Any) {
 		self.navigationController?.popViewController(animated: true)
 	}
+	/// Change ZoneEntity's favorite attribute to its opposite that corresponds to zone and change favorite status image
 	@IBAction func didToggleFavorite(_ sender: Any) {
 		// on toggle change favorite state
-		CoreDataManager.sharedManager.toggleFavoriteZones(zone: zoneID)
+		CoreDataManager.sharedManager.toggleFavoriteZones(id: zoneID)
 		if isFavorite {
 			isFavorite = false
 			favoriteImage.image = UIImage(named: "_ic24_favorite_gray")

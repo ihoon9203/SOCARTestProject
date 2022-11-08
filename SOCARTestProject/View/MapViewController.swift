@@ -44,6 +44,7 @@ class MapViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		map.delegate = self
+		map.showsCompass = false
 		// map configuration
 		CoreLocationManager.sharedLocationManager.requestAlwaysAuthorization()
 		CoreLocationManager.sharedLocationManager.requestWhenInUseAuthorization()
@@ -72,7 +73,7 @@ class MapViewController: UIViewController {
 		}
 		// Do any additional setup after loading the view.
 	}
-	
+	/// Set map's center as default coordinate or current user location
 	@objc func trackUserLocation() {
 		// 서울숲역 coordinate
 		var center = CLLocationCoordinate2D(latitude: 37.54330366639085, longitude: 127.04455548501139)
@@ -85,10 +86,12 @@ class MapViewController: UIViewController {
 			map.setCenter(center, animated: true)
 		}
 	}
+	/// Push FavoriteZoneViewController to navigationController
 	@objc func pushFavoriteVC() {
 		let favoriteZoneVC = storyboard?.instantiateViewController(withIdentifier: "FavoriteZoneVC") as! FavoriteZonesViewController
 		self.navigationController?.pushViewController(favoriteZoneVC, animated: true)
 	}
+	/// Create favorit zone button to top left corner
 	func createFavortieZoneButton() {
 		let favoriteZoneButton = UIButton(type: .custom)
 		favoriteZoneButton.layer.zPosition = 10
@@ -110,11 +113,12 @@ class MapViewController: UIViewController {
 			let tapToViewFavoriteZones = UITapGestureRecognizer(target: self, action: #selector(pushFavoriteVC))
 			nib.addGestureRecognizer(tapToViewFavoriteZones)
 			favoriteZoneButton.addSubview(nib)
-			
 		}
 		
 		self.view.addSubview(favoriteZoneButton)
 	}
+	
+	/// Create user tracking button to bottom right corner
 	func createUserTrackingButton() {
 		let trackUserButton = UIButton(type: .custom)
 		trackUserButton.layer.zPosition = 10
@@ -166,9 +170,9 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
 	}
 }
 extension MapViewController: fetchDataCommunicationProtocol{
+	// provide annotations for mapkit once data are fetched from REST API.
 	func notifyZoneDataProvided(_ zones: [ZoneAnnotation]) {
 		annotations = zones
-		dataProvider.getCars()
 	}
 }
 extension MapViewController: VCCommunicationProtocol {

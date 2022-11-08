@@ -16,7 +16,6 @@ class ZonesDataParser {
 					onSuccess(zoneList)
 				}
 			} catch {
-				print("1")
 				onFailure(error)
 			}
 		}

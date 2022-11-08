@@ -15,7 +15,6 @@ class CarsDataParser {
 					onSuccess(carList)
 				}
 			} catch {
-				print("1")
 				onFailure(error)
 			}
 		}

@@ -16,6 +16,7 @@ class CoreDataManager {
 	private init() {
 		managedContext = appDelegate.persistentContainer.viewContext
 	}
+	/// Insert list of zones to persistent storage
 	func enlistZones(zoneList: [Zone]) {
 		guard let zoneEntity = NSEntityDescription.entity(forEntityName: "ZoneEntity", in: managedContext) else { return }// creating reference from data model
 		for zone in zoneList {
@@ -38,6 +39,7 @@ class CoreDataManager {
 			self.appDelegate.saveContext()
 		}
 	}
+	/// Get a zone entity with corresponding zone id
 	func getDesignatedZone(id: String) -> ZoneEntity? {
 		var zone: ZoneEntity?
 		let fetchZoneRequest = NSFetchRequest<ZoneEntity>(entityName: "ZoneEntity")
@@ -55,6 +57,7 @@ class CoreDataManager {
 			return nil
 		}
 	}
+	/// Select all ZoneEntity in Persistent storage and return it as a list of Zone
 	func getAllZones() -> [Zone] {
 		var zones: [Zone] = []
 		let fetchZonesRequest = NSFetchRequest<ZoneEntity>(entityName: "ZoneEntity")
@@ -68,6 +71,7 @@ class CoreDataManager {
 		}
 		return zones
 	}
+	/// Select all ZoneEntity in Persistent storage that its 'favorite' attribute is true and return it as a list of Zone
 	func getFavoriteZones() -> [Zone] {
 		var zones: [Zone] = []
 		let fetchZonesRequest = NSFetchRequest<ZoneEntity>(entityName: "ZoneEntity")
@@ -82,9 +86,10 @@ class CoreDataManager {
 		}
 		return zones
 	}
-	func toggleFavoriteZones(zone: String) {
+	/// Select ZoneEntity corresponding to its zone id in Persistent Storage to have its 'favorite' attribute to its opposite
+	func toggleFavoriteZones(id: String) {
 		let fetchZonesRequest = NSFetchRequest<ZoneEntity>(entityName: "ZoneEntity")
-		fetchZonesRequest.predicate = NSPredicate(format: "id = %@", zone)
+		fetchZonesRequest.predicate = NSPredicate(format: "id = %@", id)
 		do {
 			if let zoneEntity = try managedContext.fetch(fetchZonesRequest).first {
 				if zoneEntity.favorite {
@@ -100,12 +105,13 @@ class CoreDataManager {
 			self.appDelegate.saveContext()
 		}
 	}
-	func enlistCarsForZone(carList: [Car], zone: String) {
+	/// Enlist all Car in list of Car in relation to ZoneEntity with corresponding id
+	func enlistCarsForZone(carList: [Car], id: String) {
 		var designatedZone: ZoneEntity?
 		// getting the zone to be linked with
 		let fetchZoneRequest = NSFetchRequest<ZoneEntity>(entityName: "ZoneEntity")
 		
-		fetchZoneRequest.predicate = NSPredicate(format: "id = %@", zone)
+		fetchZoneRequest.predicate = NSPredicate(format: "id = %@", id)
 		do {
 			let designatedZoneEntity = try managedContext.fetch(fetchZoneRequest)
 			designatedZone = designatedZoneEntity.first!
@@ -140,6 +146,7 @@ class CoreDataManager {
 			self.appDelegate.saveContext()
 		}
 	}
+	/// Return all cars related to ZoneEntity corresponding to zone id
 	func getAllCarsForZone(id: String) -> [Car] {
 		var cars: [Car] = []
 		var designatedZone: ZoneEntity?

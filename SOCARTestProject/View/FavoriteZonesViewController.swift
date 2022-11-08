@@ -25,6 +25,7 @@ class FavoriteZonesViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		favoriteZones = CoreDataManager.sharedManager.getFavoriteZones()
+		// once data are fetched, reload data
 		favoritesTable.reloadData()
 	}
 
@@ -44,12 +45,10 @@ extension FavoriteZonesViewController: UITableViewDelegate, UITableViewDataSourc
 	}
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let mapVC = self.navigationController?.viewControllers.first as! MapViewController
+		// connect delegate communication with map view controller and notify which zone user selected
 		self.communicationDelegate = mapVC
-//		let carListVC = storyboard?.instantiateViewController(withIdentifier: "CarListVC") as! CarListViewController
-//		carListVC.zoneID = favoriteZones[indexPath.row].id
 		self.communicationDelegate?.notifyDidSelectFavoriteZone(favoriteZones[indexPath.row])
 		self.navigationController?.popViewController(animated: true)
-//		self.navigationController?.pushViewController(carListVC, animated: true)
 	}
 	
 	
