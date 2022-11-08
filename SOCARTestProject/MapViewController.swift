@@ -156,7 +156,13 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
 			let annotation = annotation as! ZoneAnnotation
 			let carListVC = storyboard?.instantiateViewController(withIdentifier: "CarListVC") as! CarListViewController
 			carListVC.zoneID = annotation.zoneID!
-			self.navigationController?.pushViewController(carListVC, animated: true)
+			let zoneCoordinate = CLLocationCoordinate2D(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)
+			MKMapView.animate(withDuration: 0.5, delay: 0) {
+				self.map.setCenter(zoneCoordinate, animated: true)
+			}
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+				self.navigationController?.pushViewController(carListVC, animated: true)
+			}
 		}
 	}
 }
