@@ -42,8 +42,6 @@ class CarListViewController: UIViewController {
 	}
 	override func viewDidLoad() {
         super.viewDidLoad()
-		// custom insets for each cells
-		carTable.separatorInset = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
 		// no seperator for header
 		carTable.sectionHeaderTopPadding = 0
 		let currentZone = CoreDataManager.sharedManager.getDesignatedZone(id: zoneID)

@@ -25,7 +25,6 @@ class MapViewController: UIViewController {
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 		// setting up communication
-		dataProvider.carDelegate = self
 		dataProvider.zoneDelegate = self
 		
 		// populating data
@@ -166,38 +165,10 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
 		}
 	}
 }
-extension MapViewController: ZoneCommunicationProtocol, CarCommunicationProtocol {
-	func notifyZoneDataProvided(_ zones: [Zone]) {
-		registeredZones = zones
-		CoreDataManager.sharedManager.enlistZones(zoneList: registeredZones)
-		for zone in zones {
-			// if any case zone id doesn't exist set -1 as its id
-			zonesDictionary[zone.id ?? "-1"] = []
-		}
-		for zone in registeredZones {
-			let location = CLLocationCoordinate2D(latitude: zone.location?.lat ?? Double.greatestFiniteMagnitude, longitude: zone.location?.lng ?? Double.greatestFiniteMagnitude)
-			let socarAnnotation = ZoneAnnotation()
-			socarAnnotation.coordinate = location
-			socarAnnotation.title = "socar_zone" // labeling zone
-			socarAnnotation.zoneID = zone.id
-			annotations.append(socarAnnotation)
-		}
+extension MapViewController: fetchDataCommunicationProtocol{
+	func notifyZoneDataProvided(_ zones: [ZoneAnnotation]) {
+		annotations = zones
 		dataProvider.getCars()
-	}
-	
-	func notifyCarDataProvided(_ cars: [Car]) {
-		registeredCars = cars
-		for car in cars {
-			if let zones = car.zones {
-				for zone in zones {
-					zonesDictionary[zone]?.append(car)
-				}
-			}
-		}
-		for zone in zonesDictionary.keys {
-			let carsForZone = zonesDictionary[zone] ?? []
-			CoreDataManager.sharedManager.enlistCarsForZone(carList: carsForZone, zone: zone)
-		}
 	}
 }
 extension MapViewController: VCCommunicationProtocol {

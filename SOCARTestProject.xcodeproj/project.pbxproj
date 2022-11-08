@@ -15,7 +15,6 @@
 		7A60934B29188EA000CF9122 /* FavoriteZoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60934A29188EA000CF9122 /* FavoriteZoneTableViewCell.swift */; };
 		7A60934D2918926700CF9122 /* CarListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60934C2918926700CF9122 /* CarListTableViewCell.swift */; };
 		7A60934F2918935100CF9122 /* CarListTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60934E2918935100CF9122 /* CarListTableCellView.swift */; };
-		7A6093592918B86D00CF9122 /* CarListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A6093582918B86D00CF9122 /* CarListHeaderView.xib */; };
 		7A60935B2918B90C00CF9122 /* CarListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60935A2918B90C00CF9122 /* CarListHeaderView.swift */; };
 		7A60935D2918C2EA00CF9122 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60935C2918C2EA00CF9122 /* Constants.swift */; };
 		7A60935F2918C41600CF9122 /* ZonesDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60935E2918C41600CF9122 /* ZonesDataParser.swift */; };
@@ -25,6 +24,8 @@
 		7A6093712918D54100CF9122 /* ZoneEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60936D2918D54100CF9122 /* ZoneEntity+CoreDataProperties.swift */; };
 		7A6093722918D54100CF9122 /* CarEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60936E2918D54100CF9122 /* CarEntity+CoreDataClass.swift */; };
 		7A6093732918D54100CF9122 /* CarEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60936F2918D54100CF9122 /* CarEntity+CoreDataProperties.swift */; };
+		7A79B115291AD9030049A542 /* AvailableCarTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A79B114291AD9030049A542 /* AvailableCarTVCell.xib */; };
+		7A79B117291AD9100049A542 /* CarListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A79B116291AD9100049A542 /* CarListHeaderView.xib */; };
 		7A8A2B1E291A191E00F77020 /* VCCommunicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A2B1D291A191E00F77020 /* VCCommunicationProtocol.swift */; };
 		7AABDAFC2918FF0E00350BC5 /* FavoriteButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AABDAFB2918FF0E00350BC5 /* FavoriteButtonView.xib */; };
 		7AB6DD532914EDBE0013062C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD522914EDBE0013062C /* AppDelegate.swift */; };
@@ -36,7 +37,6 @@
 		7AB6DD67291579920013062C /* CoreLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD66291579920013062C /* CoreLocationManager.swift */; };
 		7AB6DD6929157E1D0013062C /* FavoriteZonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD6829157E1D0013062C /* FavoriteZonesViewController.swift */; };
 		7AB6DD6B29157E330013062C /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD6A29157E330013062C /* CarListViewController.swift */; };
-		7AB6DD6D2915DC720013062C /* AvailableCarTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB6DD6C2915DC720013062C /* AvailableCarTVCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +48,6 @@
 		7A60934A29188EA000CF9122 /* FavoriteZoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteZoneTableViewCell.swift; sourceTree = "<group>"; };
 		7A60934C2918926700CF9122 /* CarListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListTableViewCell.swift; sourceTree = "<group>"; };
 		7A60934E2918935100CF9122 /* CarListTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListTableCellView.swift; sourceTree = "<group>"; };
-		7A6093582918B86D00CF9122 /* CarListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarListHeaderView.xib; sourceTree = "<group>"; };
 		7A60935A2918B90C00CF9122 /* CarListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListHeaderView.swift; sourceTree = "<group>"; };
 		7A60935C2918C2EA00CF9122 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7A60935E2918C41600CF9122 /* ZonesDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZonesDataParser.swift; sourceTree = "<group>"; };
@@ -58,6 +57,8 @@
 		7A60936D2918D54100CF9122 /* ZoneEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZoneEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7A60936E2918D54100CF9122 /* CarEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7A60936F2918D54100CF9122 /* CarEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A79B114291AD9030049A542 /* AvailableCarTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvailableCarTVCell.xib; sourceTree = "<group>"; };
+		7A79B116291AD9100049A542 /* CarListHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarListHeaderView.xib; sourceTree = "<group>"; };
 		7A8A2B1D291A191E00F77020 /* VCCommunicationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCCommunicationProtocol.swift; sourceTree = "<group>"; };
 		7AABDAFB2918FF0E00350BC5 /* FavoriteButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteButtonView.xib; sourceTree = "<group>"; };
 		7AB6DD4F2914EDBE0013062C /* SOCARTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOCARTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +72,6 @@
 		7AB6DD66291579920013062C /* CoreLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationManager.swift; sourceTree = "<group>"; };
 		7AB6DD6829157E1D0013062C /* FavoriteZonesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteZonesViewController.swift; sourceTree = "<group>"; };
 		7AB6DD6A29157E330013062C /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
-		7AB6DD6C2915DC720013062C /* AvailableCarTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvailableCarTVCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +85,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A8A2B21291AD7D700F77020 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AB6DD562914EDBE0013062C /* MapViewController.swift */,
+				7AB6DD6829157E1D0013062C /* FavoriteZonesViewController.swift */,
+				7AB6DD6A29157E330013062C /* CarListViewController.swift */,
+				7A60934A29188EA000CF9122 /* FavoriteZoneTableViewCell.swift */,
+				7A60934C2918926700CF9122 /* CarListTableViewCell.swift */,
+				7A60934E2918935100CF9122 /* CarListTableCellView.swift */,
+				7A60935A2918B90C00CF9122 /* CarListHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7A8A2B22291AD80200F77020 /* VeiwModel */ = {
+			isa = PBXGroup;
+			children = (
+				7A60932929185BFB00CF9122 /* DataProvider.swift */,
+			);
+			path = VeiwModel;
+			sourceTree = "<group>";
+		};
+		7A8A2B23291AD83100F77020 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7A60932729185ACA00CF9122 /* Zone.swift */,
+				7A60932529185A6B00CF9122 /* Car.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A8A2B24291AD85E00F77020 /* DataParser */ = {
+			isa = PBXGroup;
+			children = (
+				7A6093682918C55700CF9122 /* CarsDataParser.swift */,
+				7A60935E2918C41600CF9122 /* ZonesDataParser.swift */,
+			);
+			path = DataParser;
+			sourceTree = "<group>";
+		};
+		7A8A2B25291AD86D00F77020 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				7A60933829186B7600CF9122 /* CoreDataManager.swift */,
+				7AB6DD66291579920013062C /* CoreLocationManager.swift */,
+				7A60935C2918C2EA00CF9122 /* Constants.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		7A8A2B26291AD87A00F77020 /* CommunicationProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				7A8A2B1D291A191E00F77020 /* VCCommunicationProtocol.swift */,
+				7A60936A2918C5E700CF9122 /* CommunicationProtocol.swift */,
+			);
+			path = CommunicationProtocols;
+			sourceTree = "<group>";
+		};
+		7A8A2B27291AD89600F77020 /* ViewAssets */ = {
+			isa = PBXGroup;
+			children = (
+				7A79B116291AD9100049A542 /* CarListHeaderView.xib */,
+				7AABDAFB2918FF0E00350BC5 /* FavoriteButtonView.xib */,
+				7A79B114291AD9030049A542 /* AvailableCarTVCell.xib */,
+			);
+			path = ViewAssets;
+			sourceTree = "<group>";
+		};
 		7AB6DD462914EDBE0013062C = {
 			isa = PBXGroup;
 			children = (
@@ -108,33 +177,20 @@
 		7AB6DD512914EDBE0013062C /* SOCARTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				7A8A2B27291AD89600F77020 /* ViewAssets */,
+				7A8A2B26291AD87A00F77020 /* CommunicationProtocols */,
+				7A8A2B25291AD86D00F77020 /* Utility */,
+				7A8A2B24291AD85E00F77020 /* DataParser */,
+				7A8A2B23291AD83100F77020 /* Model */,
+				7A8A2B22291AD80200F77020 /* VeiwModel */,
+				7A8A2B21291AD7D700F77020 /* View */,
 				7AB6DD522914EDBE0013062C /* AppDelegate.swift */,
 				7AB6DD542914EDBE0013062C /* SceneDelegate.swift */,
-				7AB6DD562914EDBE0013062C /* MapViewController.swift */,
-				7AB6DD6829157E1D0013062C /* FavoriteZonesViewController.swift */,
-				7A60934A29188EA000CF9122 /* FavoriteZoneTableViewCell.swift */,
-				7AB6DD6A29157E330013062C /* CarListViewController.swift */,
-				7A60934C2918926700CF9122 /* CarListTableViewCell.swift */,
 				7AB6DD582914EDBE0013062C /* Main.storyboard */,
 				7AB6DD5B2914EDBF0013062C /* Assets.xcassets */,
 				7AB6DD5D2914EDBF0013062C /* LaunchScreen.storyboard */,
 				7AB6DD602914EDBF0013062C /* Info.plist */,
-				7AB6DD66291579920013062C /* CoreLocationManager.swift */,
-				7AB6DD6C2915DC720013062C /* AvailableCarTVCell.xib */,
-				7A60932529185A6B00CF9122 /* Car.swift */,
-				7A60932729185ACA00CF9122 /* Zone.swift */,
-				7A60932929185BFB00CF9122 /* DataProvider.swift */,
 				7A60932B2918693F00CF9122 /* SocarModel.xcdatamodeld */,
-				7A60933829186B7600CF9122 /* CoreDataManager.swift */,
-				7A60934E2918935100CF9122 /* CarListTableCellView.swift */,
-				7A6093582918B86D00CF9122 /* CarListHeaderView.xib */,
-				7A60935A2918B90C00CF9122 /* CarListHeaderView.swift */,
-				7A60935C2918C2EA00CF9122 /* Constants.swift */,
-				7A60935E2918C41600CF9122 /* ZonesDataParser.swift */,
-				7A6093682918C55700CF9122 /* CarsDataParser.swift */,
-				7A60936A2918C5E700CF9122 /* CommunicationProtocol.swift */,
-				7AABDAFB2918FF0E00350BC5 /* FavoriteButtonView.xib */,
-				7A8A2B1D291A191E00F77020 /* VCCommunicationProtocol.swift */,
 			);
 			path = SOCARTestProject;
 			sourceTree = "<group>";
@@ -198,11 +254,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AABDAFC2918FF0E00350BC5 /* FavoriteButtonView.xib in Resources */,
-				7AB6DD6D2915DC720013062C /* AvailableCarTVCell.xib in Resources */,
 				7AB6DD5F2914EDBF0013062C /* LaunchScreen.storyboard in Resources */,
+				7A79B115291AD9030049A542 /* AvailableCarTVCell.xib in Resources */,
 				7AB6DD5C2914EDBF0013062C /* Assets.xcassets in Resources */,
+				7A79B117291AD9100049A542 /* CarListHeaderView.xib in Resources */,
 				7AB6DD5A2914EDBE0013062C /* Main.storyboard in Resources */,
-				7A6093592918B86D00CF9122 /* CarListHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
