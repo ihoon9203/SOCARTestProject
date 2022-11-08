@@ -25,6 +25,7 @@
 		7A6093712918D54100CF9122 /* ZoneEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60936D2918D54100CF9122 /* ZoneEntity+CoreDataProperties.swift */; };
 		7A6093722918D54100CF9122 /* CarEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60936E2918D54100CF9122 /* CarEntity+CoreDataClass.swift */; };
 		7A6093732918D54100CF9122 /* CarEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A60936F2918D54100CF9122 /* CarEntity+CoreDataProperties.swift */; };
+		7A8A2B1E291A191E00F77020 /* VCCommunicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A2B1D291A191E00F77020 /* VCCommunicationProtocol.swift */; };
 		7AABDAFC2918FF0E00350BC5 /* FavoriteButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AABDAFB2918FF0E00350BC5 /* FavoriteButtonView.xib */; };
 		7AB6DD532914EDBE0013062C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD522914EDBE0013062C /* AppDelegate.swift */; };
 		7AB6DD552914EDBE0013062C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6DD542914EDBE0013062C /* SceneDelegate.swift */; };
@@ -57,6 +58,7 @@
 		7A60936D2918D54100CF9122 /* ZoneEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZoneEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7A60936E2918D54100CF9122 /* CarEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7A60936F2918D54100CF9122 /* CarEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A8A2B1D291A191E00F77020 /* VCCommunicationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCCommunicationProtocol.swift; sourceTree = "<group>"; };
 		7AABDAFB2918FF0E00350BC5 /* FavoriteButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteButtonView.xib; sourceTree = "<group>"; };
 		7AB6DD4F2914EDBE0013062C /* SOCARTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SOCARTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB6DD522914EDBE0013062C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				7A6093682918C55700CF9122 /* CarsDataParser.swift */,
 				7A60936A2918C5E700CF9122 /* CommunicationProtocol.swift */,
 				7AABDAFB2918FF0E00350BC5 /* FavoriteButtonView.xib */,
+				7A8A2B1D291A191E00F77020 /* VCCommunicationProtocol.swift */,
 			);
 			path = SOCARTestProject;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AB6DD572914EDBE0013062C /* MapViewController.swift in Sources */,
+				7A8A2B1E291A191E00F77020 /* VCCommunicationProtocol.swift in Sources */,
 				7A6093732918D54100CF9122 /* CarEntity+CoreDataProperties.swift in Sources */,
 				7A6093692918C55700CF9122 /* CarsDataParser.swift in Sources */,
 				7A60934D2918926700CF9122 /* CarListTableViewCell.swift in Sources */,

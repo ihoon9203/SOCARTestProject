@@ -11,6 +11,9 @@ class FavoriteZonesViewController: UIViewController {
 
 	@IBOutlet weak var favoritesTable: UITableView!
 	@IBOutlet weak var exitBarButton: UIBarButtonItem!
+	
+	weak var communicationDelegate: VCCommunicationProtocol?
+	
 	@IBAction func popToPrevious(_ sender: Any) {
 		self.navigationController?.popViewController(animated: true)
 	}
@@ -41,9 +44,13 @@ extension FavoriteZonesViewController: UITableViewDelegate, UITableViewDataSourc
 		return cell
 	}
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let carListVC = storyboard?.instantiateViewController(withIdentifier: "CarListVC") as! CarListViewController
-		carListVC.zoneID = favoriteZones[indexPath.row].id
-		self.navigationController?.pushViewController(carListVC, animated: true)
+		let mapVC = self.navigationController?.viewControllers.first as! MapViewController
+		self.communicationDelegate = mapVC
+//		let carListVC = storyboard?.instantiateViewController(withIdentifier: "CarListVC") as! CarListViewController
+//		carListVC.zoneID = favoriteZones[indexPath.row].id
+		self.communicationDelegate?.notifyDidSelectFavoriteZone(favoriteZones[indexPath.row])
+		self.navigationController?.popViewController(animated: true)
+//		self.navigationController?.pushViewController(carListVC, animated: true)
 	}
 	
 	

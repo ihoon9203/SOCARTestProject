@@ -18,6 +18,10 @@ class MapViewController: UIViewController {
 	var annotations: [ZoneAnnotation] = []
 	var zonesDictionary = Dictionary<String, [Car]>() // zone id : car id's
 	let dataProvider = DataProvider()
+	var favoriteZoneVC: FavoriteZonesViewController?
+	
+	var selectedZone: Zone?
+	
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 		// setting up communication
@@ -188,5 +192,21 @@ extension MapViewController: ZoneCommunicationProtocol, CarCommunicationProtocol
 			let carsForZone = zonesDictionary[zone] ?? []
 			CoreDataManager.sharedManager.enlistCarsForZone(carList: carsForZone, zone: zone)
 		}
+	}
+}
+extension MapViewController: VCCommunicationProtocol {
+	func notifyDidSelectFavoriteZone(_ zone: Zone) {
+		guard let lat = zone.location?.lat else { return }
+		guard let lng = zone.location?.lng else { return }
+		let zoneCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+		MKMapView.animate(withDuration: 0.5, delay: 0) {
+			self.map.setCenter(zoneCoordinate, animated: true)
+		}
+		let carListVC = storyboard?.instantiateViewController(withIdentifier: "CarListVC") as! CarListViewController
+		carListVC.zoneID = zone.id
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+			self.navigationController?.pushViewController(carListVC, animated: true)
+		}
+		
 	}
 }
