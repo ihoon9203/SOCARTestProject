@@ -15,27 +15,11 @@ class MapViewController: UIViewController {
 	
 	var registeredZones: [Zone] = []
 	var registeredCars: [Car] = []
+	var annotations: [ZoneAnnotation] = []
 	var zonesDictionary = Dictionary<String, [Car]>() // zone id : car id's
 	let dataProvider = DataProvider()
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		map.delegate = self
-		// map configuration
-		CoreLocationManager.sharedLocationManager.requestAlwaysAuthorization()
-		CoreLocationManager.sharedLocationManager.requestWhenInUseAuthorization()
-		CoreLocationManager.sharedLocationManager.distanceFilter = 100
-		map.setCameraZoomRange(MKMapView.CameraZoomRange(maxCenterCoordinateDistance: CLLocationDistance(20000)), animated: false)
-		
-		let status = CoreLocationManager.sharedLocationManager.authorizationStatus
-		if status != .authorizedAlways && status != .authorizedWhenInUse {
-			let defaultCenter = CLLocationCoordinate2D(latitude: 37.54330366639085, longitude: 127.04455548501139)
-			map.setCenter(defaultCenter, animated: false)
-		} else {
-			map.userTrackingMode = .follow
-		}
-		
-		createUserTrackingButton()
-		createFavortieZoneButton()
+	required init?(coder: NSCoder) {
+		super.init(coder: coder)
 		// setting up communication
 		dataProvider.carDelegate = self
 		dataProvider.zoneDelegate = self
@@ -49,19 +33,48 @@ class MapViewController: UIViewController {
 			let location = CLLocationCoordinate2D(latitude: zone.location?.lat ?? Double.greatestFiniteMagnitude, longitude: zone.location?.lng ?? Double.greatestFiniteMagnitude)
 			let socarAnnotation = ZoneAnnotation()
 			socarAnnotation.coordinate = location
-			socarAnnotation.title = "socar_zone"
+			socarAnnotation.title = "socar_zone" // labeling zone
 			socarAnnotation.zoneID = zone.id
+			annotations.append(socarAnnotation)
+		}
+	}
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		map.delegate = self
+		// map configuration
+		CoreLocationManager.sharedLocationManager.requestAlwaysAuthorization()
+		CoreLocationManager.sharedLocationManager.requestWhenInUseAuthorization()
+		CoreLocationManager.sharedLocationManager.startUpdatingLocation()
+		CoreLocationManager.sharedLocationManager.distanceFilter = 100
+		map.setCameraZoomRange(MKMapView.CameraZoomRange(maxCenterCoordinateDistance: CLLocationDistance(2000)), animated: false)
+		
+		let defaultCenter = CLLocationCoordinate2D(latitude: 37.54330366639085, longitude: 127.04455548501139)
+		map.setCenter(defaultCenter, animated: false)
+		let status = CoreLocationManager.sharedLocationManager.authorizationStatus
+		if status != .denied && status != .restricted {
+			map.userTrackingMode = .follow
+		}
+		
+		createUserTrackingButton()
+		createFavortieZoneButton()
+		
+		for socarAnnotation in annotations {
 			map.addAnnotation(socarAnnotation)
 			if (map.visibleMapRect.contains(MKMapPoint(socarAnnotation.coordinate))) {
-				map.addAnnotation(socarAnnotation)
+				DispatchQueue.main.async {
+					self.map.addAnnotation(socarAnnotation)
+				}
 			}
 			map.register(ZoneAnnotationView.self, forAnnotationViewWithReuseIdentifier: "socar")
 		}
 		// Do any additional setup after loading the view.
 	}
+	
 	@objc func trackUserLocation() {
+		// 서울숲역 coordinate
 		var center = CLLocationCoordinate2D(latitude: 37.54330366639085, longitude: 127.04455548501139)
 		let status = CoreLocationManager.sharedLocationManager.authorizationStatus
+		// if unauthorized use 서울숲역 as default center
 		if status != .authorizedAlways && status != .authorizedWhenInUse {
 			map.setCenter(center, animated: true)
 		} else {
@@ -125,11 +138,11 @@ extension MapViewController: MKMapViewDelegate, CLLocationManagerDelegate {
 			view?.image = UIImage(named: "img_zone_shadow")
 			view?.annotation = annotation
 			return view
-		} else if type(of: annotation) == MKUserLocation.self {
+		} else if type(of: annotation) == MKUserLocation.self { // if case user location annotation
 			let view = MKAnnotationView(annotation: annotation, reuseIdentifier: "userLocation")
 			view.image = UIImage(named: "img_current")
 			return view
-		} else {
+		} else { // any default case if necessary
 			let view = mapView.dequeueReusableAnnotationView(withIdentifier: "")
 			return view
 		}
@@ -148,7 +161,16 @@ extension MapViewController: ZoneCommunicationProtocol, CarCommunicationProtocol
 		registeredZones = zones
 		CoreDataManager.sharedManager.enlistZones(zoneList: registeredZones)
 		for zone in zones {
+			// if any case zone id doesn't exist set -1 as its id
 			zonesDictionary[zone.id ?? "-1"] = []
+		}
+		for zone in registeredZones {
+			let location = CLLocationCoordinate2D(latitude: zone.location?.lat ?? Double.greatestFiniteMagnitude, longitude: zone.location?.lng ?? Double.greatestFiniteMagnitude)
+			let socarAnnotation = ZoneAnnotation()
+			socarAnnotation.coordinate = location
+			socarAnnotation.title = "socar_zone" // labeling zone
+			socarAnnotation.zoneID = zone.id
+			annotations.append(socarAnnotation)
 		}
 		dataProvider.getCars()
 	}
