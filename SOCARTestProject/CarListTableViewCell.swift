@@ -33,7 +33,7 @@ class CarListTableViewCell: UITableViewCell {
 			}
 			nibView.carTitle.text = title
 			nibView.carDescription.text = carDescription
-			DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) {
+			DispatchQueue.global().async {
 				if let imageName = self.imageName {
 					if let imageURL = URL(string: imageName) {
 						if let data = try? Data(contentsOf: imageURL) {
